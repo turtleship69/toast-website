@@ -3,25 +3,21 @@
     width: 350px;
     height: 100%;
     border-spacing: 0 0;
+    /* display: inline-block; */
     position: sticky;
-}
-
-/*entire side menu*/
+    float: left;
+}/*entire side menu*/
 
 #side-menu>div.side-menu.navigation>a.side-menu.navigation.button.link {
     color: inherit;
     text-decoration: none;
-}
-
-/*unhighlight navigation links*/
+}/*unhighlight navigation links*/
 
 #website-name-image {
     position: absolute;
     top: 45px;
     left: 50px;
-}
-
-/*position website name*/
+}/*position website name*/
 
 div.side-menu.navigation {
     /* div#side-menu-navigation { */
@@ -31,9 +27,7 @@ div.side-menu.navigation {
     bottom: 50px;
     width: auto;
     /* border: 1px solid; */
-}
-
-/*position links away from corner*/
+}/*position links away from corner*/
 
 div.side-menu.navigation.container {
     display: flex;
@@ -57,14 +51,9 @@ div.side-menu.navigation.container {
 #settings {
     position: absolute;
     bottom: 0px;
-    margin-top: auto;
 }
 
 p.side-menu.navigation.text {
     font-size: large;
 }
 
-:focus {
-    outline: 2px solid blue;
-    border-radius: 5px;
-}

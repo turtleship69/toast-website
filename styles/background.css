@@ -6,3 +6,8 @@ body {
     padding: 0;
     border: 1px solid;
 }
+
+:focus {
+    outline: 2px solid blue;
+    border-radius: 5px;
+}
