@@ -1,0 +1,16 @@
+#search-bar {
+    position: relative;
+    top: 0px;
+    left: 150px;
+    display: inline-flex;
+    width: 920px;
+    height: 50px;
+    border: 1px solid gray;
+    text-align: center
+}
+
+#search-bar p {
+    margin: auto;
+    font-size:larger;
+    color: gray;
+}

@@ -8,58 +8,62 @@
   <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
   <link href="styles/background.css" rel="stylesheet" type="text/css" />
   <link href="styles/sidebar.css" rel="stylesheet" type="text/css" />
+  <link href="styles/topbar.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-  <div class="side-menu" id="side-menu">
-    <div class="side-menu title" id="website-name">
-      <img class="side-menu title" id="website-name-image" src="public/Website Name.png" width="117px">
+    <div class="side-menu" id="side-menu">
+      <div class="side-menu title" id="website-name">
+        <img class="side-menu title" id="website-name-image" src="public/Website Name.png" width="117px">
+      </div>
+      <div class="side-menu navigation" id="side-menu-navigation">
+
+        <a class="side-menu navigation button link home" href="#home">
+          <div class="side-menu navigation container button home" id="home">
+            <img class="side-menu navigation home image" src="public/home selected.png" alt="home icon" width="35px"
+              height="35px">
+            <p class="side-menu navigation home text">Home</p>
+          </div>
+        </a>
+
+        <a class="side-menu navigation button link friends" href="#friends">
+          <div class="side-menu navigation container button friends" id="friends">
+            <img class="side-menu navigation friends image" src="public/friends unselected.png" alt="friends icon"
+              width="35px" height="35px">
+            <p class="side-menu navigation friends text">Friends</p>
+          </div>
+        </a>
+
+        <a class="side-menu navigation button link notifications" href="#notifications">
+          <div class="side-menu navigation container button notifications" id="notifications">
+            <img class="side-menu navigation notifications image" src="public/notification unselected.png"
+              alt="notifications icon" width="35px" height="35px">
+            <p class="side-menu navigation notifications text">Notifications</p>
+          </div>
+        </a>
+
+        <a class="side-menu navigation button link archive" href="#archive">
+          <div class="side-menu navigation container button archive" id="archive">
+            <img class="side-menu navigation archive image" src="public/archive unselected.png" alt="archive icon"
+              width="35px" height="35px">
+            <p class="side-menu navigation archive text">Archive</p>
+          </div>
+        </a>
+
+        <a class="side-menu navigation button link settings" href="#settings" id="settings">
+          <div class="side-menu navigation container button settings">
+            <img class="side-menu navigation settings image" src="public/settings unselected.png" alt="settings icon"
+              width="35px" height="35px">
+            <p class="side-menu navigation settings text">Settings</p>
+          </div>
+        </a>
+
+      </div>
     </div>
-    <div class="side-menu navigation" id="side-menu-navigation">
 
-      <a class="side-menu navigation button link home" href="#home">
-        <div class="side-menu navigation container button home" id="home">
-          <img class="side-menu navigation home image" src="public/home selected.png" alt="home icon" width="35px"
-            height="35px">
-          <p class="side-menu navigation home text">Home</p>
-        </div>
-      </a>
-
-      <a class="side-menu navigation button link friends" href="#friends">
-        <div class="side-menu navigation container button friends" id="friends">
-          <img class="side-menu navigation friends image" src="public/friends unselected.png" alt="friends icon"
-            width="35px" height="35px">
-          <p class="side-menu navigation friends text">Friends</p>
-        </div>
-      </a>
-
-      <a class="side-menu navigation button link notifications" href="#notifications">
-        <div class="side-menu navigation container button notifications" id="notifications">
-          <img class="side-menu navigation notifications image" src="public/notification unselected.png"
-            alt="notifications icon" width="35px" height="35px">
-          <p class="side-menu navigation notifications text">Notifications</p>
-        </div>
-      </a>
-
-      <a class="side-menu navigation button link archive" href="#archive">
-        <div class="side-menu navigation container button archive" id="archive">
-          <img class="side-menu navigation archive image" src="public/archive unselected.png" alt="archive icon"
-            width="35px" height="35px">
-          <p class="side-menu navigation archive text">Archive</p>
-        </div>
-      </a>
-
-      <a class="side-menu navigation button link settings" href="#settings"  id="settings">
-        <div class="side-menu navigation container button settings">
-          <img class="side-menu navigation settings image" src="public/settings unselected.png" alt="settings icon"
-            width="35px" height="35px">
-          <p class="side-menu navigation settings text">Settings</p>
-        </div>
-      </a>
-
+    <div class="search-bar" id="search-bar">
+      <p>Search</p>
     </div>
-  </div>
-
 </body>
 
 </html>
