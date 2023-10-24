@@ -1,10 +1,10 @@
 html,
 body {
-    height: 1080px;
-    width: 1920px;
+    /* height: 1080px;
+    width: 1920px; */
     margin: 0;
     padding: 0;
-    border: 1px solid;
+    /* border: 1px solid red; */
 }
 
 :focus {

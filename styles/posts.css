@@ -3,7 +3,7 @@
 #posts {
     position: relative;
     top: 20px;
-    left: 150px;
+    left: 250px;
     display: flex;
     flex-direction: column;
     border: 1px solid orange;
@@ -101,11 +101,15 @@ div.posts.post.user.border {
     left: 0px;
     height: 45px;
     width: 45px;
-    border: 5px solid pink;
+    /* border: 5px solid pink; */
     padding: 5px;
     border-radius: 50%;
     display: inline-flex;
 }
+
+div.posts.post.user.border.public {border: 5px solid #31B1EA;}
+div.posts.post.user.border.onlyFriends {border: 5px solid purple;}
+div.posts.post.user.border.private {border: 5px solid yellow;}
 
 div.posts.post.title.container {
     display: block;
