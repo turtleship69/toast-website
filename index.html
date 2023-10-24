@@ -3,67 +3,170 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <!-- <meta name="viewport" content="width=device-width"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <title>Welcome to toast</title>
   <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
   <link href="styles/background.css" rel="stylesheet" type="text/css" />
   <link href="styles/sidebar.css" rel="stylesheet" type="text/css" />
   <link href="styles/topbar.css" rel="stylesheet" type="text/css" />
+  <link href="styles/posts.css" rel="stylesheet" type="text/css" />
+
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Coming+Soon">
+
 </head>
 
 <body>
-    <div class="side-menu" id="side-menu">
-      <div class="side-menu title" id="website-name">
-        <img class="side-menu title" id="website-name-image" src="public/Website Name.png" width="117px">
+  <div class="side-menu" id="side-menu">
+    <div class="side-menu title" id="website-name">
+      <img class="side-menu title" id="website-name-image" src="/public/Website Name.png" width="117px">
+    </div>
+
+    <div class="side-menu navigation" id="side-menu-navigation">
+
+      <a class="side-menu navigation button link home" href="#home">
+        <div class="side-menu navigation container button home" id="home">
+          <img class="side-menu navigation home image" src="/public/home selected.png" alt="home icon" width="35px"
+            height="35px">
+          <p class="side-menu navigation home text">Home</p>
+        </div>
+      </a>
+
+      <a class="side-menu navigation button link friends" href="#friends">
+        <div class="side-menu navigation container button friends" id="friends">
+          <img class="side-menu navigation friends image" src="/public/friends unselected.png" alt="friends icon"
+            width="35px" height="35px">
+          <p class="side-menu navigation friends text">Friends</p>
+        </div>
+      </a>
+
+      <a class="side-menu navigation button link notifications" href="#notifications">
+        <div class="side-menu navigation container button notifications" id="notifications">
+          <img class="side-menu navigation notifications image" src="/public/notification unselected.png"
+            alt="notifications icon" width="35px" height="35px">
+          <p class="side-menu navigation notifications text">Notifications</p>
+        </div>
+      </a>
+
+      <a class="side-menu navigation button link archive" href="#archive">
+        <div class="side-menu navigation container button archive" id="archive">
+          <img class="side-menu navigation archive image" src="/public/archive unselected.png" alt="archive icon"
+            width="35px" height="35px">
+          <p class="side-menu navigation archive text">Archive</p>
+        </div>
+      </a>
+
+      <a class="side-menu navigation button link settings" href="#settings" id="settings">
+        <div class="side-menu navigation container button settings">
+          <img class="side-menu navigation settings image" src="/public/settings unselected.png" alt="settings icon"
+            width="35px" height="35px">
+          <p class="side-menu navigation settings text">Settings</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="search-bar" id="search-bar">
+    <p>Search</p>
+  </div>
+
+  <div class="posts" id="posts">
+    <div class="posts post single"> <!-- style="width: 920px; height: 245px" -->
+      <div class="posts post user container">
+        <div class="posts post user border purple">
+          <img class="posts post user pfp" src="placeholder/pfp.png" />
+        </div>
+        <div class="posts post user details">
+          <p class="posts post user details username">Blank</p>
+          <p class="posts post user details context">Sydney, Australia · 12 hours ago</p>
+        </div>
       </div>
-      <div class="side-menu navigation" id="side-menu-navigation">
+      <div class="posts post title container">
+        <p class="posts post title text">🌟 Embarking on a fresh chapter in the maze of life! 🚀 Excited to see where
+          this new entry leads me. 🌿🌄</p>
+      </div>
+      <div class="posts post actions container">
+        <div class="posts post actions like">
+          <img class="posts post actions like image" src="/public/like unselected.png">
+          <p class="posts post actions like text">1.2k</p>
+        </div>
+        <div class="posts post actions comment">
+          <img class="posts post actions comment image" src="/public/comment unselected.png">
+          <p class="posts post actions comment text">1.2k</p>
+        </div>
+      </div>
+    </div> 
 
-        <a class="side-menu navigation button link home" href="#home">
-          <div class="side-menu navigation container button home" id="home">
-            <img class="side-menu navigation home image" src="public/home selected.png" alt="home icon" width="35px"
-              height="35px">
-            <p class="side-menu navigation home text">Home</p>
-          </div>
-        </a>
 
-        <a class="side-menu navigation button link friends" href="#friends">
-          <div class="side-menu navigation container button friends" id="friends">
-            <img class="side-menu navigation friends image" src="public/friends unselected.png" alt="friends icon"
-              width="35px" height="35px">
-            <p class="side-menu navigation friends text">Friends</p>
-          </div>
-        </a>
 
-        <a class="side-menu navigation button link notifications" href="#notifications">
-          <div class="side-menu navigation container button notifications" id="notifications">
-            <img class="side-menu navigation notifications image" src="public/notification unselected.png"
-              alt="notifications icon" width="35px" height="35px">
-            <p class="side-menu navigation notifications text">Notifications</p>
-          </div>
-        </a>
 
-        <a class="side-menu navigation button link archive" href="#archive">
-          <div class="side-menu navigation container button archive" id="archive">
-            <img class="side-menu navigation archive image" src="public/archive unselected.png" alt="archive icon"
-              width="35px" height="35px">
-            <p class="side-menu navigation archive text">Archive</p>
-          </div>
-        </a>
 
-        <a class="side-menu navigation button link settings" href="#settings" id="settings">
-          <div class="side-menu navigation container button settings">
-            <img class="side-menu navigation settings image" src="public/settings unselected.png" alt="settings icon"
-              width="35px" height="35px">
-            <p class="side-menu navigation settings text">Settings</p>
-          </div>
-        </a>
+    <div class="posts post single"> 
+      <div class="posts post user container">
+        <div class="posts post user border purple">
+          <img class="posts post user pfp" src="placeholder/pfp.png" />
+        </div>
+        <div class="posts post user details">
+          <p class="posts post user details username">Blank</p>
+          <p class="posts post user details context">Sydney, Australia · 12 hours ago</p>
+        </div>
+      </div>
+      <div class="posts post title container">
+        <p class="posts post title text">Journeying through the Maze of Life: A New Entry</p>
+      </div>
 
+      <div class="posts post content container">
+        <p class="posts post content text">I wanted to share a personal milestone with this community that has been a source of inspiration and support. Today marks the beginning of a new chapter in my life, and I've titled it "Journeying through the Maze of Life: A New Entry." Life is like a labyrinth with twists, turns, and surprises at every corner. We all have our unique paths, filled with challenges and triumphs. This new entry signifies a fresh start, a chance to embrace the unknown, and an opportunity to grow and learn. I'm excited, a little nervous, but mostly hopeful about what lies ahead. It's in these moments of uncertainty that we truly discover ourselves. I'd love to hear from others who've experienced similar transitions or are currently navigating their own life mazes.</p>
+      </div>
+
+      <div class="posts post actions container">
+        <div class="posts post actions like">
+          <img class="posts post actions like image" src="/public/like unselected.png">
+          <p class="posts post actions like text">1.2k</p>
+        </div>
+        <div class="posts post actions comment">
+          <img class="posts post actions comment image" src="/public/comment unselected.png">
+          <p class="posts post actions comment text">1.2k</p>
+        </div>
       </div>
     </div>
 
-    <div class="search-bar" id="search-bar">
-      <p>Search</p>
+
+
+
+
+    <div class="posts post single"> 
+      <div class="posts post user container">
+        <div class="posts post user border purple">
+          <img class="posts post user pfp" src="placeholder/pfp.png" />
+        </div>
+        <div class="posts post user details">
+          <p class="posts post user details username">Blank</p>
+          <p class="posts post user details context">Sydney, Australia · 12 hours ago</p>
+        </div>
+      </div>
+      <div class="posts post title container">
+        <p class="posts post title text">Journeying through the Maze of Life: A New Entry</p>
+      </div>
+
+      <div class="posts post media container">
+        <img class="posts post media image" src="/placeholder/image.png" >
+      </div>
+
+      <div class="posts post actions container">
+        <div class="posts post actions like">
+          <img class="posts post actions like image" src="/public/like unselected.png">
+          <p class="posts post actions like text">1.2k</p>
+        </div>
+        <div class="posts post actions comment">
+          <img class="posts post actions comment image" src="/public/comment unselected.png">
+          <p class="posts post actions comment text">1.2k</p>
+        </div>
+      </div>
     </div>
+  </div>
 </body>
 
 </html>

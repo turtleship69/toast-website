@@ -1,0 +1,189 @@
+/* p {margin: 0px;} */
+
+#posts {
+    position: relative;
+    top: 20px;
+    left: 150px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid orange;
+    width: 920px;
+} /*set width of entire posts list */
+
+div {
+    z-index: auto;
+    min-height: 5px;
+    min-width: 5px;
+}
+
+div.post.posts {
+    /* border: 1px solid; */
+    position: relative;
+    /* display: flex; */
+}
+
+div.post.posts.single {
+    border: 1px solid purple;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 40px;
+    margin-bottom: 15px;
+}
+
+div.posts.post.container {
+    top: 25px;
+    left: 25px;
+}
+
+div.posts.post.user.container{
+    left: 25px;
+    top: 25px;
+    display: flex;
+} /*move username and context to right of pfp and put them on the same line*/
+
+div.posts.post.user.details{
+    display: inline-grid;
+    left: 15px;
+    /* top: -25px; */
+    width: 400px;
+    /* height: 65px; */
+    grid-auto-rows: 30px;
+    vertical-align: middle;
+} /*move username and context to right of pfp and put them on the same line*/
+
+p.posts.post.user.details{
+    /* vertical-align: middle; */
+    align-self: center;
+    font-size: 20px;
+}
+
+/* div.posts.post.user.container {
+    display: flex;
+    /* position: absolute; *
+} get image inline with user info */
+
+div.posts.post.user.container {
+    display: block flex;
+    position: relative;
+    left: 25px;
+    top: 25px;
+} /*move profile down and right*/
+
+/* p.posts.post.user.details{
+    position: relative;
+    display: block;
+    height: 30px;
+} */
+
+p.posts.post.user.details.context{
+    color: #666;
+} /*make context grey*/
+
+/* .posts.post.user.details {
+    display: block;
+} */
+
+img.pfp {
+    display: inline;
+    position: relative;
+    border: 1px solid;
+    border-radius: 50%;
+    object-fit: cover;
+    vertical-align: middle;
+    /* height: 50px;
+    width: 50px; */
+    /* top: 5px; */
+    /* left: 25px; */
+} /*profile pictures*/
+
+div.posts.post.user.border {
+    top: 0px;
+    left: 0px;
+    height: 45px;
+    width: 45px;
+    border: 5px solid pink;
+    padding: 5px;
+    border-radius: 50%;
+    display: inline-flex;
+}
+
+div.posts.post.title.container {
+    display: block;
+    position: relative;
+    top: 25px;
+    left: 25px;
+    font-size: 27px;
+} /*post contents/title*/
+
+p.posts.post.title.text {
+    font-family: 'Coming Soon', serif;
+    font-size: 27px;
+    margin: 10px;
+    margin-left: 0px;
+    width: 870px;
+}
+
+
+div.posts.post.actions.container {
+    display: block flex;
+    position: relative;
+    text-align: center;
+    left: 25px;
+    /* place-self: center; */
+}
+
+div.posts.post.actions {
+    display: inline-flex;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 20px;
+    /* left: 25px; */
+}
+
+img.posts.post.actions.image {
+    display: inline;
+    position: relative;
+    margin-right: 3px;
+    width: 30px;
+    height: 30px;
+}
+
+p.posts.post.actions.text {
+    display: inline;
+    position: relative;
+    top: -10px;
+    vertical-align: top;
+    /* text-align: center; */
+    /* width: 30px; */
+}
+
+/* .posts.post.actions {
+    margin-right: 10px;
+} */
+
+div.posts.post.content.container {
+    margin-right: 30px;
+}
+
+div.posts.post.content.container::before {
+    content:'';
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    background:linear-gradient(transparent 150px, white);
+}
+
+p.posts.post.content.text{
+    font-family: 'Coming Soon', serif;
+    font-size: 20px;
+    /* margin-right: 30px; */
+}
+
+img.posts.post.media.image {
+    width: 870px;
+    height: 870px;
+    margin-bottom: 3px;
+}
