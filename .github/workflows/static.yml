@@ -34,7 +34,7 @@ jobs:
       - name: Convert links
         shell: bash
         run: |
-          find . -type f -name '*.html' -exec sed -i -e 's|src="/|src="/toast-website/"|g; s|href="/|href="/toast-website/"|g' {} +
+          find . -type f -name '*.html' -exec sed -i -e 's|src="/|src="/toast-website/|g; s|href="/|href="/toast-website/|g' {} +
           find . -type f -name '*.html' -exec sh -c 'echo "{}: $(grep -o "toast-website" {} | wc -l) changes"' \;
           cat onboarding/index.html
       - name: Setup Pages
