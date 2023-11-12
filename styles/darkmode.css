@@ -1,0 +1,16 @@
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #333333;
+    }
+
+    div.posts.post.content.container::before {
+        background: linear-gradient(transparent 150px, #333333);
+    }
+
+    /*hanko styling*/
+    hanko-auth,
+    hanko-profile {
+        --background-color: transparent;
+        --color: #cccccc;
+    }
+}

@@ -1,0 +1,79 @@
+p {
+    font-family: 'Coming Soon', serif;
+}
+
+/* body {
+    display: flex;
+} */
+
+div#welcome-message {
+    display: block;
+    position: relative;
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+
+div#welcome-message>.contents {
+    display: block;
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#username-picker-outer {
+    position: relative;
+    display: block;
+    border-radius: 1em;
+    border: 1px solid #000;
+    margin-left: auto;
+    margin-right: auto;
+    width: 17em;
+    min-height: 6em;
+}
+
+#username-input-div {
+    display: flex;
+    position: relative;
+    background: #D9D9D9;
+    border-radius: 0.5rem;
+    border: 1px solid #000;
+    left: 1em;
+    width: 15em;
+    height: 3em;
+}
+
+#question {
+    position: relative;
+    display: block;
+    left: 0.6em;
+    margin: 0.4em;
+}
+
+#username-man {
+    margin-top: 0.5em;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+    width: 2em;
+    height: 2em;
+}
+
+#username {
+    background-color: transparent;
+    border-color: transparent;
+    position: relative;
+    width: inherit;
+}
+
+.username-picker.message {
+    margin-left: 1em;
+    display: none;
+}
+
+.username-picker.message.available {
+    color: green;
+}
+
+.username-picker.message.taken {
+    color: red;
+}

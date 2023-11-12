@@ -170,7 +170,7 @@ div.posts.post.content.container {
     margin-right: 30px;
 }
 
-div.posts.post.content.container::before {
+.posts.post.content.container::before {
     content:'';
     width:100%;
     height:100%;
