@@ -3,6 +3,7 @@
         background-color: #333333;
     }
 
+    /*make the text blur on long paragraphs work on dark mode*/
     div.posts.post.content.container::before {
         background: linear-gradient(transparent 150px, #333333);
     }
@@ -12,5 +13,13 @@
     hanko-profile {
         --background-color: transparent;
         --color: #cccccc;
+    }
+
+    div#username-input-div {
+        background: #474747;
+    }
+
+    img.bw-icon {
+        filter: invert(100%);
     }
 }

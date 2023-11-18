@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark" />
     <link href="/styles/darkmode.css" rel="stylesheet" type="text/css" />
-    <link href="/styles/onboarding.css" rel="stylesheet" type="text/css" />
+    <link href="onboarding.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Coming+Soon">
     <title>Onboarding</title>
 </head>
 
 <body>
     <div id="welcome-message" class="welcome-message">
-        <p class="welcome-message contents text">Welcome to</p>
-        <img class="welcome-message contents image" src="/public/Website Name.png" width="200em">
+        <p class="welcome-message contents text fancy">Welcome to</p>
+        <img id="website-name-image" class="welcome-message contents image" src="/public/Website Name.png" width="400em">
     </div>
 
     <div id="username-picker-outer" class="username-picker">
-        <p id="question">How would you like to be known?</p>
+        <p class="username-picker fancy" id="question">How would you like to be known?</p>
         <div id="username-input-div">
             <img id="username-man" src="/public/person unselected.png">
             <input id="username" name="username" placeholder="Username">

@@ -1,5 +1,9 @@
 p {
-    font-family: 'Coming Soon', serif;
+    font-family: 'Coming Soon', 'serif';
+}
+
+p.fancy {
+    font-family: 'Coming Soon', 'Algerian', 'serif';
 }
 
 /* body {
@@ -9,13 +13,14 @@ p {
 div#welcome-message {
     display: block;
     position: relative;
-    margin-top: 15%;
-    margin-bottom: 10%;
+    margin-top: 15vh;
+    margin-bottom: 10vh;
 }
 
 div#welcome-message>.contents {
     display: block;
     position: relative;
+    font-size: xx-large;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -28,7 +33,7 @@ div#username-picker-outer {
     border: 1px solid #000;
     margin-left: auto;
     margin-right: auto;
-    width: 17em;
+    width: 20em;
     min-height: 6em;
 }
 
@@ -39,15 +44,16 @@ div#username-picker-outer {
     border-radius: 0.5rem;
     border: 1px solid #000;
     left: 1em;
-    width: 15em;
+    width: 18em;
+    margin-bottom: 1em;
     height: 3em;
 }
 
 #question {
     position: relative;
     display: block;
-    left: 0.6em;
-    margin: 0.4em;
+    margin: 0.5em;
+    margin-left: 1em;
 }
 
 #username-man {
@@ -65,6 +71,10 @@ div#username-picker-outer {
     width: inherit;
 }
 
+#username:focus{
+    outline: none;
+}
+
 .username-picker.message {
     margin-left: 1em;
     display: none;
@@ -76,4 +86,8 @@ div#username-picker-outer {
 
 .username-picker.message.taken {
     color: red;
+}
+
+p.username-picker {
+    font-size: large;
 }

@@ -1,6 +1,6 @@
 #side-menu {
     border-right: 1px solid;
-    width: 350px;
+    width: 18rem;
     height: 100vh;
     border-spacing: 0 0;
     display: block;
@@ -13,28 +13,31 @@
     text-decoration: none;
 }/*unhighlight navigation links*/
 
-#website-name-image {
-    position: absolute;
-    top: 45px;
-    left: 50px;
+#website-name {
+    display: block;
+    position: relative;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    left: 3rem;
 }/*position website name*/
 
 div.side-menu.navigation {
-    /* div#side-menu-navigation { */
-    position: absolute;
-    left: 50px;
-    top: 125px;
-    bottom: 50px;
+/* div#side-menu-navigation { */
+    display: block;
+    position: relative;
+    left: 3rem;
+    /* top: 125px; */
     width: auto;
     /* border: 1px solid; */
 }/*position links away from corner*/
 
 div.side-menu.navigation.container {
     display: flex;
-    top: 0px;
-    left: 0px;
-    height: 60px;
-    width: 200px;
+    /* position: relative; */
+    top: 0rem;
+    left: 0rem;
+    height: 3.5rem;
+    width: 12.5rem;
 }
 
 .side-menu.navigation.button {
@@ -45,11 +48,11 @@ div.side-menu.navigation.container {
 
 .side-menu.navigation.text {
     position: absolute;
-    left: 50px;
+    left: 3rem;
 }
 
 #settings {
-    position: absolute;
+    position: relative;
     bottom: 0px;
 }
 
@@ -58,5 +61,5 @@ p.side-menu.navigation.text {
 }
 
 #main { 
-    margin-left: 350px;
+    margin-left: 20rem;
 }
