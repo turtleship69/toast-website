@@ -1,17 +1,17 @@
 #search-bar {
-    display: block;
+    display: flex;
     position: relative;
-    /* border-top: 10px; */
-    /* margin-left: 12rem; */
     margin: auto;
     width: 50rem;
     height: 3rem;
     border: 1px solid lightgray;
-    text-align: center
+    text-align: center;
 }
 
 #search-bar p {
-    margin: auto;
     font-size:larger;
+    margin: auto;
+    vertical-align: middle;
+    /* margin-top: 0.7em; */
     color: gray;
 }
