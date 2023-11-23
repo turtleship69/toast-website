@@ -91,3 +91,23 @@ div#username-picker-outer {
 p.username-picker {
     font-size: large;
 }
+
+#continue-container {
+    margin: auto;
+    margin-top: 1em;
+    width: fit-content;
+}
+
+#continue {
+    text-align: center;
+    vertical-align: middle;
+    background: #4285F4;
+    border-radius: 0.5rem;
+    border: 0px;
+    width: 15em;
+    height: 3em;
+}
+
+#continue:disabled {
+    background: gray;
+}
