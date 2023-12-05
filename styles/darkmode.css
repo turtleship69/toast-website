@@ -22,4 +22,13 @@
     img.bw-icon {
         filter: invert(100%);
     }
+
+    #website-name-image {
+        content:url("/public/Website Name White.png");
+    }
+
+    /*onboarding continue*/
+    #continue:disabled {
+        background: gray;
+    }
 }
