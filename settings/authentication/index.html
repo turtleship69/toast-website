@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage your account</title>
+    <meta name="color-scheme" content="light dark" />
+    <link href="/styles/darkmode.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <hanko-profile />
+
+    <nav>
+        <a href="#" id="logout-link">Logout</a>
+    </nav>
+
+
+    <script type="module">
+        import { register } from 'https://esm.run/@teamhanko/hanko-elements';
+
+        const { hanko } = await register("https://bfa75350-d1ac-4256-9406-428490c09da8.hanko.io");
+
+        if (!hanko.session.isValid()) {
+            document.location.href = "/login"
+        }
+
+        document.getElementById("logout-link")
+            .addEventListener("click", (event) => {
+                event.preventDefault();
+                hanko.user.logout();
+            });
+
+        hanko.onUserLoggedOut(() => {
+            // successfully logged out, redirect to a page in your application
+            document.location.href = "/"
+        })
+    </script>
+</body>
+
+
+</html>
