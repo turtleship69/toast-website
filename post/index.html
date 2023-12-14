@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="color-scheme" content="light dark" />
+    <link href="/styles/darkmode.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Coming+Soon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="post.css">
+    <title>Create a new post</title>
+</head>
+
+<body>
+    <form id="form">
+        <h2 class="post">Create a post</h2>
+        <input class="post" id="title" type="text" placeholder="Title" required><br>
+        <textarea class="post" id="postBody" name="postBody" id="postBody" placeholder="Body (optional)" cols="50"
+            rows="5"></textarea><br>
+
+        <!-- Drag and drop area -->
+        <!-- <div class="post" id="drop-zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);"> -->
+        <div class="post" id="drop-zone">
+            <p id="image-label">Drag images here or click to upload</p>
+            <div id="previews"> <!-- style="display: none;" -->
+                <div class="upload-preview" id="preview-1">
+                    <div class="cross 1">&#10006;</div>
+                </div>
+                <div class="upload-preview" id="preview-2">
+                    <div class="cross 2">&#10006;</div>
+                </div>
+                <div class="upload-preview" id="preview-3">
+                    <div class="cross 3">&#10006;</div>
+                </div>
+                <div class="upload-preview" id="preview-4">
+                    <div class="cross 4">&#10006;</div>
+                </div>
+                <div class="upload-preview" id="preview-5">
+                    <div class="cross 5">&#10006;</div>
+                </div>
+            </div>
+        </div>
+        <!-- Hidden file input for traditional file selection -->
+        <input type="file" id="image-upload" name="image-upload" accept="image/*" multiple style="display:none;"
+            onchange="handleFileSelect(event)">
+
+        <div>
+            <p>Who should this post be visible to?</p>
+            <button class="post privacy-selector" id="onlyMe" onclick="handleButtonClick(this, event)">Only Ken</button>
+            <button class="post privacy-selector" id="onlyFriends" onclick="handleButtonClick(this, event)">Only Friends</button>
+            <button class="post privacy-selector" id="everyone" onclick="handleButtonClick(this, event)">Everyone</button>
+        </div>
+
+        <input class="post" id="submit" type="submit" value="Submit">
+    </form>
+
+    <script src="imageManager.js"></script>
+    <script src="imagePreview.js"></script>
+    <script src="imageSelector.js"></script>
+    <script src="imageUpload.js"></script>
+    <script src="privacySelector.js"></script>
+    <script src="submit.js"></script>
+</body>
+
+</html>
