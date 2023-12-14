@@ -18,19 +18,22 @@
         <img id="website-name-image" class="welcome-message contents image" src="/public/Website Name.png"
             width="300em">
     </div>
-    <form>
+    <!-- <form action="/hanko/onboarding" method="POST"> -->
+    <!-- <form id="form" onsubmit="return submit();"> -->
+    <form id="form">
         <div id="username-picker-outer" class="username-picker">
             <p class="username-picker fancy" id="question">How would you like to be known?</p>
             <div id="username-input-div">
                 <img id="username-man" src="/public/person unselected.png">
-                <input type="text" id="username" name="username" placeholder="Username">
+                <input type="text" id="username" name="username" placeholder="Username" autofocus required>
             </div>
             <p id="good" class="username-picker message available">That username is available</p>
             <p id="bad" class="username-picker message taken">That username is taken</p>
         </div>
 
         <div id="continue-container">
-            <button id="continue" onclick="a" disabled>Continue</button>
+            <!-- <button id="continue" onclick="submit()" disabled>Continue</button> -->
+            <input id="continue" type="submit" value="Continue" />
         </div>
     </form>
 </body>
