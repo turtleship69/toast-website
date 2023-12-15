@@ -192,7 +192,26 @@ p.posts.post.content.text{
 }
 
 img.posts.post.media.image {
-    width: 47rem;
     height: 47rem;
-    margin-bottom: 0.25em;
+    width: 47rem;
+    /* margin-bottom: 0.25rem; */
+    margin-bottom: 0rem;
+}
+
+p.posts.post.media.caption {
+    position: absolute;
+    bottom: 0.25rem;
+    margin: 0rem;
+    padding: 0 0.5rem;
+    font-family: 'Coming Soon', serif;
+    font-size: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #ffffff;
+    background-color: rgba(55, 55, 55, 0.7);
+    height: 3rem;
+    line-height: 3rem;
+    width: 46rem;
+
 }
