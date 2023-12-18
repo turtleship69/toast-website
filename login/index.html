@@ -6,6 +6,7 @@
   <title>Log in to toast</title>
   <meta name="color-scheme" content="light dark" />
   <link href="/styles/darkmode.css" rel="stylesheet" type="text/css" />
+  <link rel="preload" href="/config/hanko.json" as="fetch" type="application/json" crossorigin="anonymous">
   <style>
     #main {
       margin: auto;
@@ -20,23 +21,7 @@
     <hanko-auth />
   </div>
 
-  <script type="module">
-    import { register } from "https://esm.run/@teamhanko/hanko-elements";
-
-    const { hanko } = await register("https://bfa75350-d1ac-4256-9406-428490c09da8.hanko.io");
-
-    hanko.onAuthFlowCompleted(async () => {
-      // successfully logged in, make a request to "/api/login"
-      const response = await fetch("/hanko/login");
-      const data = await response.json();
-
-      // check if the status in the returned JSON is "success"
-      if (data.status === "success") {
-        // redirect to "/"
-        document.location.href = data.redirect;
-      }
-    });
-  </script>
+  <script src="login.js" type="module"></script>
 </body>
 
 </html>
