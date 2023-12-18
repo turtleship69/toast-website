@@ -30,7 +30,7 @@ function submit() {
     }
 
     // Make a post request to /submit/post with the FormData
-    fetch('/submit/post', {
+    fetch('/new_post/post', {
         method: 'POST',
         body: postData,
     })
