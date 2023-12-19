@@ -30,14 +30,17 @@ function submit() {
     }
 
     // Make a post request to /submit/post with the FormData
-    fetch('/new_post/post', {
+    fetch('/new_post/new', {
         method: 'POST',
         body: postData,
     })
         .then(response => response.json())
         .then(data => {
             console.log('Post submitted successfully:', data);
-            // You can add additional logic here if needed
+            
+
+            post_url = `/post?p=${data.id}`;
+            document.location.href = post_url;
         })
         .catch(error => {
             console.error('Error submitting post:', error);
