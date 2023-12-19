@@ -24,7 +24,7 @@ if (postId) {
                         throw new Error(`Unauthorized: ${data.message}`);
                     }
                 });
-            } else if (response.status === 400) {
+            } else if (response.status === 400 || response.status === 404) {
                 return response.json().then(data => {
                     if (data.message === "Invalid post ID") {
                         errorMessage = document.createElement("p")
@@ -50,6 +50,9 @@ if (postId) {
         })
         .catch(error => console.error("Error fetching data:", error));
 } else {
+    errorMessage = document.createElement("p")
+    errorMessage.innerText = "No post ID provided"
+    document.getElementById("posts").appendChild(errorMessage)
     console.error("Post ID not found in the URL");
 }
 
