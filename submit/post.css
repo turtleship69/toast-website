@@ -133,14 +133,14 @@ button {
 
 /*=============== buttons start ===============*/
 #onlyMe.clicked {
-    background-color: #9A58C6;
+    background-color: #FFEB00;
 }
 
 #onlyFriends.clicked {
-    background-color: #31B1EA;
+    background-color: #9A58C6;
 }
 
 #everyone.clicked {
-    background-color: #FFEB00;
+    background-color: #31B1EA;
 }
 /*=============== buttons end ===============*/
