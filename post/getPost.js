@@ -1,13 +1,5 @@
-// Function to extract parameter from URL
-function getUrlParameter(name) {
-    name = name.replace(/[[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
-    var results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
 // Fetch data based on the "p" parameter
-const postId = getUrlParameter("p");
+const postId = new URLSearchParams(window.location.search).get('p')
 
 if (postId) {
     const apiUrl = `/get_posts/get_post/${postId}`;
@@ -81,7 +73,7 @@ function createPostHTML(post) {
 
     var username = document.createElement("p");
     username.className = "posts post user details username";
-    username.innerText = "Blank"; // Update with actual username
+    username.innerText = post.Username; // Update with actual username
     userDetails.appendChild(username);
 
     var context = document.createElement("p");
