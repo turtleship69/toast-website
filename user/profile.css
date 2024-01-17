@@ -1,0 +1,176 @@
+/*========== overdrive mainPosts.css ==========*/
+div#posts {
+    margin-top: 0;
+}
+
+/*========== entire profile box  ==========*/
+#profile {
+    position: relative;
+    margin: auto;
+    /* border: 1px solid purple; */
+}
+#profile-contents {
+    position: relative;
+    display: flex;
+    /* border: 1px solid pink; */
+    margin: auto;
+    width: 50rem;
+}
+
+/*========== line ==========*/
+#line {
+    min-height: 0;
+    height: 1px;
+    background: gray;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50rem
+}
+
+/*========== profile picture ==========*/
+#profile-picture-box {
+    display: inline-flex;
+}
+
+#profile-picture {
+    width: 8rem;
+    height: 8rem;
+    margin: 1rem;
+    margin-left: 4rem;
+    /* display: inline; */
+    /* position: relative; */
+    border: 1px solid;
+    border-radius: 50%;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+div.profile.info.top {
+    position: relative;
+    display: inline-flex;
+    vertical-align: top;
+    /* top: 3rem; */
+}
+
+#info {
+    position: relative;
+    /* display: flex; */
+}
+
+
+
+/*========== username ==========*/
+#username-box {
+    position: relative;
+    display: inline-flex;
+    font-size: xxx-large;
+    margin-right: 1em;
+}
+
+#username {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: "Coming Soon", Algerian, Serif;
+}
+
+/*========== button ==========*/
+.split-button {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    top: 0.1rem;
+    font-size: larger;
+    font-family: "Coming Soon", Algerian, Serif;
+}
+
+.connection.buttons {
+    font-family: "Coming Soon", Algerian, Serif;
+    font-size: larger;
+    padding: 0.5rem;
+}
+
+
+.connection.buttons.main-button {
+    background-color: #31B1EA;
+    color: white;
+    /* padding: 10px; */
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 1rem 0 0 1rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.dropdown-button {
+    background-color: #31B1EA;
+    color: white;
+    padding: 10px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 0 1rem 1rem 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #9A58C6;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 0 0 5px 5px;
+}
+
+.split-button:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content button {
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.dropdown-content button:hover {
+    background-color: #ddd;
+}
+
+/*========== stats ==========*/
+div.profile.info.connections {
+    position: relative;
+    display: flex;
+    /* margin-top: 0.1rem; */
+}
+
+p.profile.info.connections {
+    padding-right: 1em;
+    font-family: "Coming Soon", Algerian, Serif;
+    font-size: larger;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+p.profile.info.connections.count {
+    padding-right: 0.3em;
+    font-weight: bold;
+}
+
+/*========== bio ==========*/
+.profile.info.bio {
+    margin-top: 0;
+    font-family: "Coming Soon", Algerian, Serif;
+    font-size: large;
+    max-width: 30rem;
+    overflow: hidden;
+    max-height: 4.3em;
+}

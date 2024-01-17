@@ -3,6 +3,10 @@
         background-color: #333333;
     }
 
+    div.post.posts.single {
+        border: 1px solid white;
+    }
+
     /*make the text blur on long paragraphs work on dark mode*/
     div.posts.post.content.container::before {
         background: linear-gradient(transparent 150px, #333333);
@@ -24,7 +28,7 @@
     }
 
     #website-name-image {
-        content:url("/public/Website Name White.png");
+        content: url("/public/Website Name White.png");
     }
 
     /*onboarding continue*/
