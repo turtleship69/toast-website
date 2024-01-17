@@ -8,8 +8,9 @@
     left: 0px;
     display: flex;
     flex-direction: column;
-    border: 1px solid orange;
-    width: 50rem;
+    /* border: 1px solid orange; */
+    max-width: 50rem;
+    width: fit-content;
 } /*set width of entire posts list */
 
 div {
@@ -31,7 +32,7 @@ div.post.posts {
 }
 
 div.post.posts.single {
-    border: 1px solid purple;
+    border: 1px solid black;
     position: relative;
     display: inline-block;
     /* padding-bottom: 2.5rem; */
@@ -87,7 +88,7 @@ p.posts.post.user.details.context{
     display: block;
 } */
 
-img.pfp {
+img.post.pfp {
     display: inline;
     position: relative;
     border: 1px solid;
