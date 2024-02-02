@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import json
 import os
 """this file gets the environment variables and saves them to config files"""
