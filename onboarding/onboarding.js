@@ -37,7 +37,7 @@ function submit(event) {
             }
             else {
                 alert("signed up");
-                window.location.href = "/";
+                window.location.href = data.redirect_url;
             }
         })
         .catch(error => {
