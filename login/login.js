@@ -1,14 +1,14 @@
-
 import { register } from "https://esm.run/@teamhanko/hanko-elements";
 
+const login_url = servers_config.backend + "/hanko/login"
 
 // Define the URL for the JSON file
-const configUrl = '/config/hanko.json';
+// const configUrl = '/config/hanko.json';
 
 // Define an async function to use the await keyword
 async function fetchData() {
     try {
-        // Use the fetch API to make a GET request
+        /*// Use the fetch API to make a GET request
         const response = await fetch(configUrl);
 
         // Check if the request was successful (status code 200 OK)
@@ -19,14 +19,14 @@ async function fetchData() {
         // Parse the JSON response
         const configData = await response.json();
         const config = configData;
-        console.log(config);
+        console.log(config); */
 
         // Assuming 'register' is an async function that returns a promise
-        const { hanko } = await register(config.url);
+        const { hanko } = await register(hanko_config.url);
 
         hanko.onAuthFlowCompleted(async () => {
             // successfully logged in, make a request to "/api/login"
-            const response = await fetch("/hanko/login");
+            const response = await fetch(login_url);
             const data = await response.json();
         
             // check if the status in the returned JSON is "success"
@@ -53,9 +53,3 @@ async function fetchData() {
 
 // Call the async function
 fetchData();
-
-
-
-
-
-

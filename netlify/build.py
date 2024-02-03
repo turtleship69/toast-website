@@ -17,8 +17,8 @@ class Config():
         for item in self.variables:
             config[item[0]] = item[1]
 
-        with open(f"config/{self.filename}.json", 'w') as f:
-            json.dump(config, f)
+        with open(f"config/{self.filename}.js", 'w') as f:
+            f.write(f"const {self.filename}_config = {json.dumps(config, indent=4)}")
 
 
 hanko = Config("hanko")
