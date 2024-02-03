@@ -30,3 +30,25 @@ servers = Config("servers")
 servers.add_variable("frontend", os.environ["URL"])
 servers.add_variable("backend", os.environ["BACKEND_URL"])
 servers.save()
+
+
+#define url rewrite rules
+netlify = f"""[[redirects]] 
+from = "/get_post/*" 
+to = "{os.environ["BACKEND_URL"]}/get_post/:splat" 
+status = 200 
+force = true
+
+[[redirects]] 
+from = "/new_post/*" 
+to = "{os.environ["BACKEND_URL"]}/new_post/:splat" 
+status = 200 
+force = true
+
+[[redirects]] 
+from = "/hanko/*" 
+to = "{os.environ["BACKEND_URL"]}/hanko/:splat" 
+status = 200 
+force = true"""
+with open("netlify.toml", 'w') as f:
+    f.write(netlify)
