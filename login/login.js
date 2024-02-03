@@ -39,7 +39,7 @@ async function fetchData() {
                     document.location.href = redirect_url
                 } else {
                     console.log(`redirect parameter: ${data.redirect_url}`)
-                    document.location.href = data.redirect
+                    document.location.href = data.redirect_url
                 }
             }
         });
