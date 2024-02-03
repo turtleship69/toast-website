@@ -25,3 +25,8 @@ hanko = Config("hanko")
 # get HANKO_URL and save it as url
 hanko.add_variable("url", os.environ["HANKO_URL"])
 hanko.save()
+
+servers = Config("servers")
+servers.add_variable("frontend", os.environ["URL"])
+servers.add_variable("backend", os.environ["BACKEND_URL"])
+servers.save()
