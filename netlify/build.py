@@ -34,8 +34,14 @@ servers.save()
 
 #define url rewrite rules
 netlify = f"""[[redirects]] 
-from = "/get_post/*" 
-to = "{os.environ["BACKEND_URL"]}/get_post/:splat" 
+from = "/hanko/*" 
+to = "{os.environ["BACKEND_URL"]}/hanko/:splat" 
+status = 200 
+force = true
+
+[[redirects]] 
+from = "/get_posts/*" 
+to = "{os.environ["BACKEND_URL"]}/get_posts/:splat" 
 status = 200 
 force = true
 
@@ -43,12 +49,7 @@ force = true
 from = "/new_post/*" 
 to = "{os.environ["BACKEND_URL"]}/new_post/:splat" 
 status = 200 
-force = true
-
-[[redirects]] 
-from = "/hanko/*" 
-to = "{os.environ["BACKEND_URL"]}/hanko/:splat" 
-status = 200 
 force = true"""
+
 with open("netlify.toml", 'w') as f:
     f.write(netlify)
