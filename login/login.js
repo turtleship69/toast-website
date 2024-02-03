@@ -1,6 +1,10 @@
 import { register } from "https://esm.run/@teamhanko/hanko-elements";
 
-const login_url = "/hanko/login" //servers_config.backend + 
+var login_url = "/hanko/login" //servers_config.backend + 
+const redirect_url = new URLSearchParams(window.location.search).get('redirect_url')
+if (redirect_url) {
+    login_url += "?redirect_url=" + redirect_url;
+}
 
 // Define the URL for the JSON file
 // const configUrl = '/config/hanko.json';
@@ -33,7 +37,6 @@ async function fetchData() {
             if (data.status === "success") {
                 // redirect to "/"
                 // successfully logged in, redirect to a page in your application
-                let redirect_url = new URLSearchParams(window.location.search).get('redirect_url')
                 if (redirect_url) {
                     console.log(`redirect parameter: ${redirect_url}`)
                     document.location.href = redirect_url
