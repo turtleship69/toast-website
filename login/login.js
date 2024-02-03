@@ -1,6 +1,6 @@
 import { register } from "https://esm.run/@teamhanko/hanko-elements";
 
-const login_url = servers_config.backend + "/hanko/login"
+const login_url = "/hanko/login" //servers_config.backend + 
 
 // Define the URL for the JSON file
 // const configUrl = '/config/hanko.json';
