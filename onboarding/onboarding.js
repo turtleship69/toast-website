@@ -21,6 +21,11 @@ function submit(event) {
     const formData = new URLSearchParams();
     formData.append('username', document.getElementById('username').value);
 
+    redirect_url = new URLSearchParams(window.location.search).get('redirect_url')
+    if (redirect_url) {
+        formData.append('redirect_url', redirect_url);
+    }
+
     fetch('/hanko/onboarding', {
         method: 'POST',
         body: formData.toString(),
@@ -36,7 +41,6 @@ function submit(event) {
                 alert(data.message);
             }
             else {
-                alert("signed up");
                 window.location.href = data.redirect_url;
             }
         })
