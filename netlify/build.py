@@ -52,6 +52,12 @@ status = 200
 force = true
 
 [[redirects]] 
+from = "/friendships/*" 
+to = "{os.environ["BACKEND_URL"]}/friendships/:splat" 
+status = 200 
+force = true
+
+[[redirects]] 
 from = "/images/*" 
 to = "{os.environ["BACKEND_URL"]}/images/:splat" 
 status = 200 
