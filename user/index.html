@@ -7,7 +7,6 @@
     <title>View User</title>
     <link rel="stylesheet" href="profile.css">
 
-
     <link rel="stylesheet" href="/styles/mainSidebar.css">
     <link rel="stylesheet" href="/styles/mainPosts.css">
 
@@ -68,7 +67,17 @@
         </div>
     </div>
 
+    <!-- <div id="loading"> -->
+    <h1 id="loading">
+        <div id="message" class="centered">
+            Loading...
+        </div>
+    </h1>
+    <!-- </div> -->
+
+
     <div id="main">
+
 
         <div id="profile">
             <div id="profile-contents">
@@ -79,30 +88,31 @@
                 <div id="info">
                     <div class="profile info top">
                         <div id="username-box">
-                            <p id="username">Blind</p>
+                            <p id="username">Loading</p>
                         </div>
                         <div class="split-button">
-                            <button class="connection buttons main-button">Follow</button>
+                            <button class="connection buttons main-button" id="follow-button">Follow</button>
                             <button class="connection buttons dropdown-button">▼</button>
                             <div class="dropdown-content">
-                                <button class="connection buttons">Send Friend Request</button>
+                                <button id="friend-request" class="connection buttons">Send Friend Request</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="profile info connections">
                         <div class="profile info connections followers">
-                            <p class="profile info connections count" id="follower-count">2.4m</p>
+                            <p class="profile info connections count" id="follower-count"></p>
                             <p class="profile info connections" id="follower-count">followers</p>
                         </div>
                         <div class="profile info connections following">
-                            <p class="profile info connections count" id="following-count">2.4m</p>
-                            <p class="profile info connections" id="following-count">followers</p>
+                            <p class="profile info connections count" id="following-count"></p>
+                            <p class="profile info connections" id="following-count">following</p>
                         </div>
                     </div>
 
                     <div class="profile info bio">
-                        <p class="profile info bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        <p class="profile info bio" id="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do
                             eiusmod tempor incididunt ut
                             labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                             laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
@@ -270,7 +280,11 @@
             </div>
         </div>
     </div>
+
+
     <script src="getUser.js"></script>
+    <script src="friendships.js"></script>
+    <script src="/scripts/formatNumbers.js"></script>
 </body>
 
 </html>
