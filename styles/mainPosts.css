@@ -193,14 +193,14 @@ p.posts.post.actions.text {
 p.posts.post.content.text{
     font-family: 'Coming Soon', serif;
     font-size: 20px;
-    max-width: 48rem;
+    max-width: 47rem;
     overflow-wrap: break-word;
     /* margin-right: 30px; */
 }
 
 img.posts.post.media.image {
-    height: 48rem;
-    width: 48rem;
+    height: 47rem;
+    width: 47rem;
     /* margin-bottom: 0.25rem; */
     margin-bottom: 0rem;
 }
