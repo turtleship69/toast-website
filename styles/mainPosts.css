@@ -11,6 +11,7 @@
     /* border: 1px solid orange; */
     max-width: 50rem;
     width: fit-content;
+    word-wrap: break-word;
 } /*set width of entire posts list */
 
 div {
