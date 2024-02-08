@@ -1,3 +1,12 @@
+body {
+    margin: 0;
+}
+
 p {
     font-family: 'Coming Soon', 'Algerian', 'serif';
+}
+
+.centered {
+    margin: auto;
+    text-align: center;
 }
