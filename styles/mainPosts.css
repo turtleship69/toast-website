@@ -74,6 +74,7 @@ div.posts.post.user.container {
     margin-left: 1rem;
     margin-right: 1rem;
     margin-top: 1rem;
+    width: 48rem;
 } /*move profile down and right*/
 
 /* p.posts.post.user.details{
@@ -198,8 +199,8 @@ p.posts.post.content.text{
 }
 
 img.posts.post.media.image {
-    height: 47rem;
-    width: 47rem;
+    height: 48rem;
+    width: 48rem;
     /* margin-bottom: 0.25rem; */
     margin-bottom: 0rem;
 }
