@@ -72,6 +72,7 @@ div.posts.post.user.container {
     display: block flex;
     position: relative;
     margin-left: 1rem;
+    margin-right: 1rem;
     margin-top: 1rem;
 } /*move profile down and right*/
 
@@ -191,6 +192,7 @@ p.posts.post.actions.text {
 p.posts.post.content.text{
     font-family: 'Coming Soon', serif;
     font-size: 20px;
+    overflow-wrap: break-word;
     /* margin-right: 30px; */
 }
 
