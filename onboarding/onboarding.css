@@ -26,7 +26,8 @@ div#welcome-message>.contents {
     margin-right: auto;
 }
 
-div#username-picker-outer {
+/* ========== username styles ========== */
+.picker-outer {
     position: relative;
     display: block;
     border-radius: 1em;
@@ -37,7 +38,7 @@ div#username-picker-outer {
     min-height: 6em;
 }
 
-#username-input-div {
+.input-div {
     display: flex;
     position: relative;
     background: #D9D9D9;
@@ -49,7 +50,7 @@ div#username-picker-outer {
     height: 3em;
 }
 
-#question {
+.question {
     position: relative;
     display: block;
     margin: 0.5em;
@@ -59,19 +60,19 @@ div#username-picker-outer {
 #username-man {
     margin-top: 0.5em;
     margin-left: 0.1em;
-    margin-right: 0.1em;
+    /* margin-right: 0.1em; */
     width: 2em;
     height: 2em;
 }
 
-#username {
+input, textarea {
     background-color: transparent;
     border-color: transparent;
     position: relative;
     width: inherit;
 }
 
-#username:focus{
+#username:focus {
     outline: none;
 }
 
@@ -92,6 +93,8 @@ p.username-picker {
     font-size: large;
 }
 
+/* ========== continue button ========== */
+
 #continue-container {
     margin: auto;
     margin-top: 1em;
@@ -110,4 +113,38 @@ p.username-picker {
 
 #continue:disabled {
     background: lightgray;
+}
+
+/* ========== animation ========== */
+
+#username-picker-outer,
+#bio-picker-outer {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.fade-out {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ========== bio styles ========== */
+
+/* #bio-container {
+    margin: auto;
+    width: fit-content;
+} */
+
+#bio-picker-outer {
+    display: none;
+}
+
+#bio {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
 }

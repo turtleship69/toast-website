@@ -7,19 +7,49 @@ const safe = [
     '_', '-', '.'
 ];
 
-function flash(message) {
-    alert(message)
-}
 
 function filterString(str, list) {
     return str.split('').filter(char => list.includes(char)).join('');
 }
 
+function switchInputPrompt(event) {
+    event.preventDefault();
+
+    //check username isn't empty
+    const username = document.getElementById('username').value;
+    if (username.length === 0) {
+        alert("Username cannot be empty");
+        return;
+    }
+
+    const usernamePicker = document.getElementById('username-picker-outer');
+    const bioPicker = document.getElementById('bio-picker-outer');
+
+    // Slide out the username picker
+    usernamePicker.classList.add('fade-out');
+
+    // Set a timeout to hide the username picker and show the bio picker
+    setTimeout(() => {
+        usernamePicker.style.display = 'none';
+        bioPicker.style.display = 'block';
+
+        // Slide in the bio picker
+        bioPicker.classList.add('fade-in');
+    }, 500); // Adjust the timeout based on the transition duration in CSS
+
+    //change event listener to submit()
+    document.getElementById("form").removeEventListener("submit", switchInputPrompt);
+    document.getElementById("form").addEventListener("submit", submit)
+}
+
 function submit(event) {
     event.preventDefault();
 
+    alert("yay")
+
     const formData = new URLSearchParams();
     formData.append('username', document.getElementById('username').value);
+    formData.append('bio', document.getElementById('bio').value);
 
     redirect_url = new URLSearchParams(window.location.search).get('redirect_url')
     if (redirect_url) {
@@ -31,11 +61,11 @@ function submit(event) {
         body: formData.toString(),
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     }).then(response => {
-            if (!response.ok) {
-                throw new Error(response);
-            }
-            return response.json();
-        })
+        if (!response.ok) {
+            throw new Error(response);
+        }
+        return response.json();
+    })
         .then(data => {
             if (!data || data.status !== 'success') {
                 alert(data.message);
@@ -58,6 +88,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
     good = document.getElementById("good")
     bad = document.getElementById("bad")
     cont_button = document.getElementById("continue")
+    cont_button.disabled = true;
+
     //when the contents of #username is edited, check if it's already taken
     input_box = document.getElementById("username")
 
@@ -79,5 +111,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
         }
     });
 
-    document.getElementById("form").addEventListener("submit", submit)
+    document.getElementById("form").addEventListener("submit", switchInputPrompt)
+    
+    document.getElementById("bio").addEventListener('input', autoResize, false);
 });
+
+
+function autoResize() {
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + 'px';
+}
