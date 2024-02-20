@@ -19,7 +19,7 @@
         --color: #cccccc;
     }
 
-    div#username-input-div {
+    div.input-div {
         background: #474747;
     }
 
