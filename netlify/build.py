@@ -83,7 +83,7 @@ for folder in folders:
     with open(folder + "index.html", "w") as f:
         f.write(output)
     if os.getenv("NETLIFY") == "true":
-        os.remove(folder + "/index.html.jinja")
+        os.remove(folder + "index.html.jinja")
     print("Done compiling " + folder)
 
 
