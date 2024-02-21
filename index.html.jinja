@@ -1,0 +1,168 @@
+{% extends 'sidemenu.html.jinja' %}
+
+{% block styles %}
+{{ super() }}
+<link href="styles/mainBackground.css" rel="stylesheet" type="text/css" />
+<link href="styles/mainTopbar.css" rel="stylesheet" type="text/css" />
+<link href="styles/mainPosts.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+
+{% block content %}
+<div class="search-bar" id="search-bar">
+    <p>Search</p>
+</div>
+
+<div class="posts" id="posts">
+    <div class="posts post single"> <!-- style="width: 920px; height: 245px" -->
+        <div class="posts post user container">
+            <div class="posts post user border public">
+                <img class="posts post user pfp" src="/placeholder/pfp.jpg" />
+            </div>
+            <div class="posts post user details">
+                <p class="posts post user details username">Blank</p>
+                <p class="posts post user details context">Sydney, Australia · 12 hours ago</p>
+            </div>
+        </div>
+        <div class="posts post title container">
+            <p class="posts post title text">&#127775; Embarking on a fresh chapter in the maze of life! &#128640; Excited
+                to
+                see where
+                this new entry leads me. &#127807;&#127748;</p>
+        </div>
+        <div class="posts post actions container">
+            <div class="posts post actions like">
+                <img class="posts post actions like image bw-icon" src="/public/like unselected.png">
+                <p class="posts post actions like text">1.2k</p>
+            </div>
+            <div class="posts post actions comment">
+                <img class="posts post actions comment image bw-icon" src="/public/comment unselected.png">
+                <p class="posts post actions comment text">1.2k</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="posts post single">
+        <div class="posts post user container">
+            <div class="posts post user border onlyFriends">
+                <img class="posts post user pfp" src="/placeholder/pfp.jpg" />
+            </div>
+            <div class="posts post user details">
+                <p class="posts post user details username">Blank</p>
+                <p class="posts post user details context">Sydney, Australia · 12 hours ago</p>
+            </div>
+        </div>
+        <div class="posts post title container">
+            <p class="posts post title text">Journeying through the Maze of Life: A New Entry</p>
+        </div>
+        <div class="posts post content container">
+            <p class="posts post content text">I wanted to share a personal milestone with this community
+                that
+                has been a
+                source of inspiration and support. Today marks the beginning of a new chapter in my life,
+                and
+                I've titled it
+                "Journeying through the Maze of Life: A New Entry." Life is like a labyrinth with twists,
+                turns,
+                and
+                surprises at every corner. We all have our unique paths, filled with challenges and
+                triumphs.
+                This new entry
+                signifies a fresh start, a chance to embrace the unknown, and an opportunity to grow and
+                learn.
+                I'm excited,
+                a little nervous, but mostly hopeful about what lies ahead. It's in these moments of
+                uncertainty
+                that we
+                truly discover ourselves. I'd love to hear from others who've experienced similar
+                transitions or
+                are
+                currently navigating their own life mazes.</p>
+        </div>
+        <div class="posts post actions container">
+            <div class="posts post actions like">
+                <img class="posts post actions like image bw-icon" src="/public/like unselected.png">
+                <p class="posts post actions like text">1.2k</p>
+            </div>
+            <div class="posts post actions comment">
+                <img class="posts post actions comment image bw-icon" src="/public/comment unselected.png">
+                <p class="posts post actions comment text">1.2k</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="posts post single">
+        <div class="posts post user container">
+            <div class="posts post user border private">
+                <img class="posts post user pfp" src="/placeholder/pfp.jpg" />
+            </div>
+            <div class="posts post user details">
+                <p class="posts post user details username">Blank</p>
+                <p class="posts post user details context">Sydney, Australia · 12 hours ago</p>
+            </div>
+        </div>
+        <div class="posts post title container">
+            <p class="posts post title text">Journeying through the Maze of Life: A New Entry</p>
+        </div>
+        <div class="posts post media container">
+            <img class="posts post media image" src="/placeholder/image1.jpg">
+        </div>
+        <div class="posts post actions container">
+            <div class="posts post actions like">
+                <img class="posts post actions like image bw-icon" src="/public/like unselected.png">
+                <p class="posts post actions like text">1.2k</p>
+            </div>
+            <div class="posts post actions comment">
+                <img class="posts post actions comment image bw-icon" src="/public/comment unselected.png">
+                <p class="posts post actions comment text">1.2k</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="posts post single">
+        <div class="posts post user container">
+            <div class="posts post user border private">
+                <img class="posts post user pfp" src="/placeholder/pfp.jpg" />
+            </div>
+            <div class="posts post user details">
+                <p class="posts post user details username">Blank</p>
+                <p class="posts post user details context">Sydney, Australia · 12 hours ago</p>
+            </div>
+        </div>
+        <div class="posts post title container">
+            <p class="posts post title text">Journeying through the Maze of Life: A New Entry</p>
+        </div>
+
+        <div class="posts post media container">
+            <img class="posts post media image" src="/placeholder/image2.jpg">
+            <p class="posts post media caption">Navigating the twists and turns of life's maze, I've arrived
+                at
+                a new
+                chapter full of possibilities. Join me on this journey through the labyrinth of experiences,
+                growth, and
+                endless discoveries. &#127775; #NewBeginnings #LifeMaze #AdventureAwaits</p>
+        </div>
+        <div class="posts post actions container">
+            <div class="posts post actions like">
+                <img class="posts post actions like image bw-icon" src="/public/like unselected.png">
+                <p class="posts post actions like text">1.2k</p>
+            </div>
+            <div class="posts post actions comment">
+                <img class="posts post actions comment image bw-icon" src="/public/comment unselected.png">
+                <p class="posts post actions comment text">1.2k</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

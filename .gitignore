@@ -1,2 +1,5 @@
 config/hanko.json
 config/servers.json
+
+_site
+!_site/.gitkeep

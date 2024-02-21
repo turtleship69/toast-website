@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import json
 import os
+from jinja2 import Environment, FileSystemLoader
 """this file gets the environment variables and saves them to config files"""
 
 class Config():
@@ -26,10 +27,10 @@ hanko = Config("hanko")
 hanko.add_variable("url", os.environ["HANKO_URL"])
 hanko.save()
 
-servers = Config("servers")
-servers.add_variable("frontend", os.environ["URL"])
-servers.add_variable("backend", os.environ["BACKEND_URL"])
-servers.save()
+# servers = Config("servers")
+# servers.add_variable("frontend", os.environ["URL"])
+# servers.add_variable("backend", os.environ["BACKEND_URL"])
+# servers.save()
 
 
 #define url rewrite rules
@@ -65,3 +66,25 @@ force = true"""
 
 with open("netlify.toml", 'w') as f:
     f.write(netlify)
+
+
+
+
+
+
+folders = ["post/", "settings/auth/", "submit/", "user/", ""]
+
+# for each folder, look for index.html.jinja, compile it and delete the original
+for folder in folders:
+    env = Environment(loader=FileSystemLoader(['templates', folder]))
+    template = env.get_template("index.html.jinja")
+    output = template.render()
+    #print(folder + "index.html")
+    with open(folder + "index.html", "w") as f:
+        f.write(output)
+    if os.getenv("NETLIFY") == "true":
+        os.remove(folder + "/index.html.jinja")
+    print("Done compiling " + folder)
+
+
+print("Done compiling website")

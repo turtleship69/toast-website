@@ -1,0 +1,20 @@
+{% extends 'sidemenu.html.jinja' %}
+
+{% block title %}
+    View post
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="/styles/mainPosts.css">
+{% endblock %}
+
+{% block content %}
+<div id="posts"></div>
+{% endblock %}
+
+{% block body %}
+{{ super() }}
+<script src="getPost.js"></script>
+<script src="/scripts/formatNumbers.js"></script>
+{% endblock %}

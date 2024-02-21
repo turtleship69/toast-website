@@ -1,3 +1,8 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 #side-menu {
     border-right: 1px solid;
     width: 18rem;
@@ -6,6 +11,7 @@
     display: block;
     position: fixed;
     float: left;
+    top: 0;
 }/*entire side menu*/
 
 #side-menu>div.side-menu.navigation>a.side-menu.navigation.button.link {
