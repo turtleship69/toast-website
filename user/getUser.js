@@ -21,6 +21,17 @@ if (!username) {
                 document.getElementById('following-count').innerHTML = formatNumber(following)
                 document.getElementById('bio').innerHTML = data.bio
                 document.getElementById('profile-picture').src = data.gravatar
+                
+                //if there are no posts, make #no-posts visible
+                if (data.posts.length == 0) {
+                    document.getElementById('no-posts').style.display = 'block'
+                }
+                //for every post in data.post, run createPostHTML(post)
+                data.posts.forEach(post => {
+                    var postHTML = createPostHTML(post)
+                    var postContainer = document.getElementById('posts')
+                    postContainer.appendChild(postHTML)
+                })
 
                 if (data.is_following) {
                     removeFollowButton()

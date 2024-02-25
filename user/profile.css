@@ -189,3 +189,9 @@ p.profile.info.connections.count {
     overflow: hidden;
     max-height: 4.3em;
 }
+
+/*========== posts ==========*/
+#no-posts {
+    margin: auto;
+    width: fit-content;
+}
