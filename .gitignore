@@ -3,3 +3,5 @@ config/servers.json
 
 _site
 !_site/.gitkeep
+
+*/index.html
