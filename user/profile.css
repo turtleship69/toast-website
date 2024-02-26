@@ -2,6 +2,9 @@ body {
     margin: 0;
 }
 
+p {
+    font-family: "Coming Soon", Algerian, Serif;
+}
 /*========== loading ==========*/
 #main {
     display: none;
@@ -87,7 +90,6 @@ div.profile.info.top {
 #username {
     margin-top: 0;
     margin-bottom: 0;
-    font-family: "Coming Soon", Algerian, Serif;
 }
 
 /*========== button ==========*/
@@ -97,11 +99,9 @@ div.profile.info.top {
     vertical-align: top;
     top: 0.1rem;
     font-size: larger;
-    font-family: "Coming Soon", Algerian, Serif;
 }
 
 .connection.buttons {
-    font-family: "Coming Soon", Algerian, Serif;
     font-size: larger;
     padding: 0.5rem;
 }
@@ -169,7 +169,6 @@ div.profile.info.connections {
 
 p.profile.info.connections {
     padding-right: 1em;
-    font-family: "Coming Soon", Algerian, Serif;
     font-size: larger;
     margin-top: auto;
     margin-bottom: auto;
@@ -183,7 +182,6 @@ p.profile.info.connections.count {
 /*========== bio ==========*/
 .profile.info.bio {
     margin-top: 0;
-    font-family: "Coming Soon", Algerian, Serif;
     font-size: large;
     max-width: 30rem;
     overflow: hidden;
@@ -194,4 +192,5 @@ p.profile.info.connections.count {
 #no-posts {
     margin: auto;
     width: fit-content;
+    display: none;
 }
