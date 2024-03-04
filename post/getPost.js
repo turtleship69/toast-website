@@ -24,7 +24,7 @@ if (postId) {
                 } else if (!response.ok) {
                     throw new Error(`Error: ${response.status}`);
                 }
-                return response.json();
+                return data;
             });
         })
         .then(data => {
