@@ -1,6 +1,7 @@
 {% extends 'base.html.jinja' %}
 
 {% block styles %}
+{{ super() }}
 <link href="/styles/mainSidebar.css" rel="stylesheet" type="text/css" />
 {% endblock %}
 
@@ -13,7 +14,7 @@
 
     <div class="side-menu navigation" id="side-menu-navigation">
 
-        <a class="side-menu navigation button link home" href="#home">
+        <a class="side-menu navigation button link home" href="/">
             <div class="side-menu navigation container button home" id="home">
                 <img class="side-menu navigation home image bw-icon" alt="home icon" width="35px" height="35px" 
                 {% block home %} src="/public/home unselected.png" {% endblock %}>
@@ -29,7 +30,7 @@
             </div>
         </a>
 
-        <a class="side-menu navigation button link notifs" href="#notifs">
+        <a class="side-menu navigation button link notifs" href="/notifs">
             <div class="side-menu navigation container button notifs" id="notifs">
                 <img class="side-menu navigation notifs image bw-icon" alt="notifs icon" width="35px" height="35px" 
                 {% block notifs %} src="/public/notif unselected.png" {% endblock %}>
@@ -37,7 +38,7 @@
             </div>
         </a>
 
-        <a class="side-menu navigation button link archive" href="#archive">
+        <a class="side-menu navigation button link archive" href="/archive">
             <div class="side-menu navigation container button archive" id="archive">
                 <img class="side-menu navigation archive image bw-icon" alt="archive icon" width="35px" height="35px" 
                 {% block archive %} src="/public/archive unselected.png" {% endblock %}>
@@ -45,7 +46,23 @@
             </div>
         </a>
 
-        <a class="side-menu navigation button link settings" href="#settings" id="settings">
+        <a class="side-menu navigation button link post" href="/post">
+            <div class="side-menu navigation container button post" id="post">
+                <img class="side-menu navigation post image bw-icon" alt="post icon" width="35px" height="35px" 
+                {% block post %} src="/public/post unselected.png" {% endblock %}>
+                <p class="side-menu navigation post text">Post</p>
+            </div>
+        </a>
+
+        <a class="side-menu navigation button link profile" href="/profile">
+            <div class="side-menu navigation container button profile" id="profile">
+                <img class="side-menu navigation profile image bw-icon" alt="profile icon" width="35px" height="35px" 
+                {% block profile %} src="/public/profile unselected.png" {% endblock %}>
+                <p class="side-menu navigation profile text">Profile</p>
+            </div>
+        </a>
+
+        <a class="side-menu navigation button link settings" href="/settings" id="settings">
             <div class="side-menu navigation container button settings">
                 <img class="side-menu navigation settings image bw-icon" alt="settings icon" width="35px" height="35px"
                     {% block settings %} src="/public/settings unselected.png" {% endblock %}>

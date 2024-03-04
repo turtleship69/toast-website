@@ -31,9 +31,10 @@ div.side-menu.navigation {
 /* div#side-menu-navigation { */
     display: block;
     position: relative;
-    left: 3rem;
     /* top: 125px; */
+    left: 3rem;
     width: auto;
+    height: 80vh;
     /* border: 1px solid; */
 }/*position links away from corner*/
 
@@ -58,7 +59,7 @@ div.side-menu.navigation.container {
 }
 
 #settings {
-    position: relative;
+    position: absolute;
     bottom: 0px;
 }
 
