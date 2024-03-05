@@ -8,7 +8,19 @@ function createPostHTML(post) {
     userContainer.className = "posts post user container";
 
     var userBorder = document.createElement("div");
-    userBorder.className = "posts post user border private";
+    switch (post.Visibility) {
+        case 2:
+            userBorder.className = "posts post user border public";
+            break;
+        case 1:
+            userBorder.className = "posts post user border onlyFriends";
+            break;
+        case 0:
+            userBorder.className = "posts post user border private";
+            break;
+        default:
+            console.warn("no visibility provided")
+    }
 
     var userPfp = document.createElement("img");
     userPfp.className = "posts post user pfp";
@@ -22,7 +34,7 @@ function createPostHTML(post) {
 
     var username = document.createElement("p");
     username.className = "posts post user details username";
-    username.innerText = post.Username; 
+    username.innerText = post.Username;
     userDetails.appendChild(username);
 
     var context = document.createElement("p");
