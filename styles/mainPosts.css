@@ -194,7 +194,9 @@ p.posts.post.content.text{
     font-family: 'Coming Soon', serif;
     font-size: 20px;
     max-width: 47rem;
+    max-height: 20em;
     overflow-wrap: break-word;
+    overflow: hidden;
     /* margin-right: 30px; */
 }
 
