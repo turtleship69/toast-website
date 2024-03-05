@@ -9,7 +9,7 @@ if (postId) {
             console.log(response.status)
             return response.json().then(data => {
                 if (response.status === 401) {
-                    if (data.message === "Invalid session") {
+                    if (data.errorCode === "loginRequired") {
                         // Redirect to the login page
                         login_redirect_url = `/login/?redirect_url=/post/?p=${new URLSearchParams(window.location.search).get('p')}`
                         window.location.href = login_redirect_url;
@@ -28,13 +28,13 @@ if (postId) {
             });
         })
         .then(data => {
-            let post = data;
-            // Now you can use the 'post' object
-            console.log(post);
-
-            var postHTML = createPostHTML(post);
-            var postContainer = document.getElementById("posts");
-            postContainer.appendChild(postHTML); // Append the generated post HTML to the body or any other desired element
+            console.log(data);
+            if (data.status === "success") {
+                var postHTML = createPostHTML(data);
+                var postContainer = document.getElementById("posts");
+                postContainer.appendChild(postHTML); 
+                // Append the generated post HTML to the body or any other desired element
+            }
         })
 } else {
     errorMessage = document.createElement("p")
