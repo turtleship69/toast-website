@@ -2,6 +2,7 @@ function createPostHTML(post) {
     // Create main container div
     var postDiv = document.createElement("div");
     postDiv.className = "posts post single";
+    postDiv.id = "Post-" + post.PostID;
 
     // User details container
     var userContainer = document.createElement("div");
@@ -47,8 +48,45 @@ function createPostHTML(post) {
 
     userContainer.appendChild(userDetails);
 
-    postDiv.appendChild(userContainer);
 
+    if (post.byCurrentUser) {
+        // Triple-dot menu container
+        // var menuContainer = document.createElement("div");
+        // menuContainer.className = "posts post menu container";
+
+        var menu = document.createElement("div");
+        menu.className = "posts post menu options";
+
+        var deleteOption = document.createElement("button");
+        deleteOption.className = "posts post menu option";
+        deleteOption.classList.toggle("hidden");
+        deleteOption.innerText = "Delete Post";
+        deleteOption.addEventListener("click", function () {
+            // Send delete request to /new_post/delete/{post_id}
+            deletePost(post.PostID);
+        });
+        menu.appendChild(deleteOption);
+
+        // Triple-dot menu image
+        var menuImage = document.createElement("img");
+        menuImage.className = "posts post menu image bw-icon";
+        menuImage.src = "/public/menu.png";
+        // menuImage.width = "24";
+        // menuImage.height = "24";
+        menu.appendChild(menuImage);
+
+
+        userContainer.appendChild(menu);
+
+        //make menuOptions toggle deleteOption's visibility
+        menuImage.addEventListener("click", function () {
+            deleteOption.classList.toggle("hidden");
+        });
+
+        // postDiv.appendChild(menuContainer);
+    }
+
+    postDiv.appendChild(userContainer);
     // Title container
     var titleContainer = document.createElement("div");
     titleContainer.className = "posts post title container";
@@ -126,4 +164,20 @@ function createPostHTML(post) {
     postDiv.appendChild(actionsContainer);
 
     return postDiv;
+}
+
+function deletePost(postID) {
+    // Send get request to /new_post/delete/{post_id}
+    // check data.status and either remove post div or display error message
+    fetch("/new_post/delete/" + postID)
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                // Remove post div from page
+                var postDiv = document.getElementById("Post-" + postID);
+                postDiv.remove();
+            } else {
+                alert("Error deleting post:", data.message);
+            }
+        });
 }

@@ -69,7 +69,7 @@ p.posts.post.user.details{
 } get image inline with user info */
 
 div.posts.post.user.container {
-    display: block flex;
+    display: flex;
     position: relative;
     margin-left: 1rem;
     margin-right: 1rem;
@@ -223,4 +223,13 @@ p.posts.post.media.caption {
     line-height: 3rem;
     width: 46rem;
 
+}
+
+div.posts.post.menu {
+    margin-left: auto;
+}
+
+img.posts.post.menu {
+    width: 24px;
+    height: 24px;
 }
