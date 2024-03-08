@@ -68,11 +68,14 @@ View user
         <p>No posts</p>
     </div>
 </div>
+{% endblock %}
 
 
-
-<script src="getUser.js"></script>
-<script src="friendships.js"></script>
+{% block headScripts %}
 <script src="/scripts/formatNumbers.js"></script>
 <script src="/scripts/generatePost.js"></script>
+{% endblock %}
+{% block bodyScripts %}
+<script src="getUser.js"></script>
+<script src="friendships.js"></script>
 {% endblock %}

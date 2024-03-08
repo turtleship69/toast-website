@@ -13,9 +13,11 @@
 <div id="posts"></div>
 {% endblock %}
 
-{% block body %}
-{{ super() }}
-<script src="getPost.js"></script>
+{% block headScripts %}
 <script src="/scripts/formatNumbers.js"></script>
 <script src="/scripts/generatePost.js"></script>
+{% endblock %}
+
+{% block bodyScripts %}
+<script src="getPost.js"></script>
 {% endblock %}

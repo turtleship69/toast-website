@@ -5,9 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <title>{% block title %}Welcome to toast{% endblock %}</title> 
+    
     {% block styles %}
     <link rel="stylesheet" href="/styles/globalDefaults.css">
     {% endblock %}
+
+    {% block headScripts %}{% endblock %}
 
     {% block preloads %}{% endblock %}
 
@@ -19,5 +22,6 @@
 <body>
     {% block body %}
     {% endblock %}
+    {% block bodyScripts %}{% endblock %}
 </body>
 </html>
