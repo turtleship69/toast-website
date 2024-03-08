@@ -24,8 +24,11 @@ function createPostHTML(post) {
 
     var userPfp = document.createElement("img");
     userPfp.className = "posts post user pfp";
-    userPfp.src = "/placeholder/pfp.jpg"; // You may want to update this with the actual user's profile picture
-
+    if (post.Gravatar) {
+        userPfp.src = post.Gravatar;
+    } else {
+        userPfp.src = "/placeholder/pfp.jpg"; // You may want to update this with the actual user's profile picture
+    }
     userBorder.appendChild(userPfp);
     userContainer.appendChild(userBorder);
 
