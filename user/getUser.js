@@ -20,7 +20,11 @@ if (!username) {
                 following = data.following
                 document.getElementById('following-count').innerHTML = formatNumber(following)
                 document.getElementById('bio').innerHTML = data.bio
-                document.getElementById('profile-picture').src = data.gravatar
+                if (data.gravatar) {
+                    document.getElementById('profile-picture').src = data.gravatar
+                } else {
+                    document.getElementById('profile-picture').src = '/placeholder/pfp.png'
+                }
                 
                 //if there are no posts, make #no-posts visible
                 if (data.posts.length == 0) {
