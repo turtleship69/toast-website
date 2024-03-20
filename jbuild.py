@@ -2,7 +2,7 @@ from jinja2 import Environment, FileSystemLoader
 import os
 
 
-folders = ["post/", "settings/auth/", "submit/", "user/", ""]
+folders = ["post/", "settings/", "submit/", "user/", ""]
 
 
 # for each folder, look for index.html.jinja, compile it and delete the original

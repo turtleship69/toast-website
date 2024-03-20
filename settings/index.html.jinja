@@ -1,0 +1,37 @@
+{% extends "sidemenu.html.jinja" %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="settings.css">
+{% endblock %}
+
+{% block content %}
+    <h1>Settings</h1>
+    {# <h2>Profile</h2> #}
+    <!-- to be added -->
+    <h2>Account login</h2>
+    <hanko-profile />
+{% endblock  %}
+
+{% block bodyScripts %}
+<script type="module">
+    import { register } from 'https://esm.run/@teamhanko/hanko-elements';
+
+    const { hanko } = await register("https://bfa75350-d1ac-4256-9406-428490c09da8.hanko.io");
+
+    if (!hanko.session.isValid()) {
+        document.location.href = "/login?redirect_url=/settings/auth"
+    }
+
+    document.getElementById("logout-link")
+        .addEventListener("click", (event) => {
+            event.preventDefault();
+            hanko.user.logout();
+        });
+
+    hanko.onUserLoggedOut(() => {
+        // successfully logged out, redirect to a page in your application
+        document.location.href = "/"
+    })
+</script>
+{% endblock %}
