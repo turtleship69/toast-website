@@ -4,7 +4,6 @@ import os
 
 folders = ["post/", "settings/", "submit/", "user/", ""]
 
-
 # for each folder, look for index.html.jinja, compile it and delete the original
 for folder in folders:
     env = Environment(loader=FileSystemLoader(['templates', folder]))
