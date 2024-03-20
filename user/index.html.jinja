@@ -75,7 +75,8 @@ View user
 <script src="/scripts/formatNumbers.js"></script>
 <script src="/scripts/generatePost.js"></script>
 {% endblock %}
+
 {% block bodyScripts %}
+{{ super() }}
 <script src="getUser.js"></script>
-<script src="friendships.js"></script>
 {% endblock %}
