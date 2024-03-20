@@ -7,6 +7,7 @@
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" href="/styles/mainPosts.css">
+<link rel="stylesheet" href="post.css">
 {% endblock %}
 
 {% block content %}
@@ -19,5 +20,6 @@
 {% endblock %}
 
 {% block bodyScripts %}
+{{ super() }}
 <script src="getPost.js"></script>
 {% endblock %}
