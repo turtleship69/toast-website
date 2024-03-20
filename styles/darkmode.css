@@ -31,8 +31,16 @@
         content: url("/public/Website Name White.png");
     }
 
+    #website-logo {
+        content: url("/public/Website Logo White.png");
+    }
+
     /*onboarding continue*/
     #continue:disabled {
         background: gray;
+    }
+
+    #notif-div {
+        background-color: #333333;
     }
 }
