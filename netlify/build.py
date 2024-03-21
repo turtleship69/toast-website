@@ -62,6 +62,12 @@ force = true
 from = "/images/*" 
 to = "{os.environ["BACKEND_URL"]}/images/:splat" 
 status = 200 
+force = true
+
+[[redirects]] 
+from = "/notifications/*" 
+to = "{os.environ["BACKEND_URL"]}/notifications/:splat" 
+status = 200 
 force = true"""
 
 with open("netlify.toml", 'w') as f:
