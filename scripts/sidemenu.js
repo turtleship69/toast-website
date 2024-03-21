@@ -20,10 +20,15 @@ function getNotifs() {
             console.log(data);
             var notifDiv = document.getElementById('notifs');
             notifDiv.innerHTML = "";
-            for (var i = 0; i < data.length; i++) {
-                var notif = createNotifDiv(data[i]);
-                console.log(notif);
-                notifDiv.appendChild(notif);
+            if (data.length == 0) {
+                notifDiv.innerHTML = "No new notifications";
+                return;
+            } else {
+                for (var i = 0; i < data.length; i++) {
+                    var notif = createNotifDiv(data[i]);
+                    console.log(notif);
+                    notifDiv.appendChild(notif);
+                }
             }
         }
         )
@@ -77,4 +82,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
         }
         )
-  });
+});
