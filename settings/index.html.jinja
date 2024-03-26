@@ -1,31 +1,49 @@
 {% extends "sidemenu.html.jinja" %}
 
 {% block styles %}
-    {{ super() }}
-    <link rel="stylesheet" href="settings.css">
+{{ super() }}
+<link rel="stylesheet" href="settings.css">
+{% endblock %}
+
+{% block headScripts %}
+<script src="/config/hanko.js"></script>
 {% endblock %}
 
 {% block content %}
-    <h1>Settings</h1>
-    <!-- <h2>Profile</h2> -->
-    <!-- to be added -->
-    <h2>Account login</h2>
+<h1>Settings</h1>
+<!-- <h2>Profile</h2> -->
+<!-- to be added -->
+<h2>Account login</h2>
+<div>
     <hanko-profile />
-{% endblock  %}
+</div>
+<button id="logout-link">Logout</button>
+{% endblock %}
 
 {% block bodyScripts %}
+{{ super() }}
 <script type="module">
     import { register } from 'https://esm.run/@teamhanko/hanko-elements';
 
-    const { hanko } = await register("https://bfa75350-d1ac-4256-9406-428490c09da8.hanko.io");
+    const { hanko } = await register(hanko_config.url);
 
     if (!hanko.session.isValid()) {
-        document.location.href = "/login?redirect_url=/settings/auth"
+        document.location.href = "/login?redirect_url=/settings"
     }
 
     document.getElementById("logout-link")
         .addEventListener("click", (event) => {
-            event.preventDefault();
+            //delete session cookie, make a request to /hanko/logout and run hanko.user.logout()
+            document.cookie = "session=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            fetch('/hanko/logout')
+                .then(response => {
+                    if (response.ok) {
+                        console.log("Logout successful");
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                })
             hanko.user.logout();
         });
 
