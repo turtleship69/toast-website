@@ -1,7 +1,7 @@
 {% extends 'sidemenu.html.jinja' %}
 
 {% block title %}
-    View post
+View post
 {% endblock %}
 
 {% block styles %}
@@ -23,3 +23,5 @@
 {{ super() }}
 <script src="getPost.js"></script>
 {% endblock %}
+
+{% block post %} src="/public/post selected.png" {% endblock post %}
