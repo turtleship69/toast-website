@@ -1,15 +1,25 @@
+var notifDiv = document.getElementById('notif-div');
+var website_name = document.getElementById('website-name-image');
+var website_logo = document.getElementById('website-logo');
+var notif_logo = document.querySelector("#side-menu-navigation > a.side-menu.navigation.button.link.notifs > div > img")
+
 function showNotifs() {
     // console.log("clicked")
-    var notifDiv = document.getElementById('notif-div');
     notifDiv.classList.toggle("hidden");
 
-    var website_name = document.getElementById('website-name-image');
     website_name.classList.toggle("hidden");
 
-    var website_logo = document.getElementById('website-logo');
     website_logo.classList.toggle("hidden");
-
+    
     getNotifs()
+
+    if (notif_logo.src.endsWith("/public/notif%20unselected.png")) {
+        notif_logo.src = "/public/notif%20selected.png"
+    }
+    else {
+        notif_logo.src = "/public/notif%20unselected.png"
+    }
+
 }
 
 
@@ -79,6 +89,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 profile_a.href = "/login";
                 var profile_p = document.getElementById('profile-p');
                 profile_p.innerText = "Login";
+
+                var new_post_list = document.querySelector(".side-menu.navigation.button.link.newPost");
+                new_post_list.href = "/login?redirect_url=/submit";
             }
         }
         )
