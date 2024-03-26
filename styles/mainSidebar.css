@@ -27,7 +27,6 @@ html, body {
     transition: transform 0.3s ease-out;
     transform: scale(1);
     transition-delay: 0.3s;
-    /* top: 5rem; */
 }
 
 #website-logo.hidden {
@@ -117,18 +116,18 @@ p.side-menu.navigation.text {
     left: 6.5rem;
     width: 20rem;
     height: 100vh;
-    border-color: red;
+    border-color: black;
     border-width: 1px;
+    border-style: solid;
     float: right;
-    border-style: dashed;
-    transition: 1s;
+    transition: 0.7s;
     z-index: 6;
     background-color: white;
 }
 
 #notif-div.hidden {
-    left: -50rem;
-    transition: 1s;
+    left: -20.1rem;
+    transition: 0.7s;
     /* display: none; */
 }
 

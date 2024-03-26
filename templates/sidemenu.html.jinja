@@ -53,7 +53,7 @@
                 <div class="side-menu navigation container button newPost">
                     <img class="side-menu navigation newPost image bw-icon" alt="post icon" width="35px" height="35px" {%
                         block post %} src="/public/post unselected.png" {% endblock %}>
-                    <p class="side-menu navigation post text">Post</p>
+                    <p class="side-menu navigation newPost text">Post</p>
                 </div>
             </a>
 
@@ -65,7 +65,7 @@
                 </div>
             </a>
 
-            <a class="side-menu navigation button link settings" href="/settings">
+            <a class="side-menu navigation button link settings" href="/settings" id="setting">
                 <div class="side-menu navigation container button settings">
                     <img class="side-menu navigation settings image bw-icon" alt="settings icon" width="35px"
                         height="35px" {% block settings %} src="/public/settings unselected.png" {% endblock %}>
