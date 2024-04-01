@@ -19,9 +19,11 @@
 
             <a class="side-menu navigation button link home" href="/">
                 <div class="side-menu navigation container button home">
-                    <img class="side-menu navigation home image bw-icon" alt="home icon" width="35px" height="35px" {%
-                        block home %} src="/public/home unselected.png" {% endblock %}>
+                    {% block home %}
+                    <img class="side-menu navigation home image bw-icon" alt="home icon" width="35px" height="35px"
+                        src="/public/home unselected.png">
                     <p class="side-menu navigation home text">Home</p>
+                    {% endblock %}
                 </div>
             </a>
 
@@ -35,9 +37,11 @@
 
             <a class="side-menu navigation button link notifs" onclick="showNotifs()" style="cursor: pointer;">
                 <div class="side-menu navigation container button notifs">
+                    {% block notifs %}
                     <img class="side-menu navigation notifs image bw-icon" alt="notifs icon" width="35px" height="35px"
-                        {% block notifs %} src="/public/notif unselected.png" {% endblock %}>
+                        src="/public/notif unselected.png">
                     <p class="side-menu navigation notifs text">Notifs</p>
+                    {% endblock %}
                 </div>
             </a>
 
@@ -51,25 +55,31 @@
 
             <a class="side-menu navigation button link newPost" href="/submit">
                 <div class="side-menu navigation container button newPost">
-                    <img class="side-menu navigation newPost image bw-icon" alt="post icon" width="35px" height="35px" {%
-                        block post %} src="/public/post unselected.png" {% endblock %}>
+                    {% block post %}
+                    <img class="side-menu navigation newPost image bw-icon" alt="post icon" width="35px" height="35px"
+                        src="/public/post unselected.png">
                     <p class="side-menu navigation newPost text">Post</p>
+                    {% endblock %}
                 </div>
             </a>
 
             <a class="side-menu navigation button link profile" href="/hanko/profile" id="profile-a">
                 <div class="side-menu navigation container button profile">
+                    {% block profile %}
                     <img class="side-menu navigation profile image bw-icon" alt="profile icon" width="35px"
-                        height="35px" {% block profile %} src="/public/profile unselected.png" {% endblock %}>
+                        height="35px" src="/public/profile unselected.png">
                     <p class="side-menu navigation profile text" id="profile-p">Profile</p>
+                    {% endblock %}
                 </div>
             </a>
 
             <a class="side-menu navigation button link settings" href="/settings" id="setting">
                 <div class="side-menu navigation container button settings">
+                    {% block settings %}
                     <img class="side-menu navigation settings image bw-icon" alt="settings icon" width="35px"
-                        height="35px" {% block settings %} src="/public/settings unselected.png" {% endblock %}>
+                        height="35px" src="/public/settings unselected.png">
                     <p class="side-menu navigation settings text">Settings</p>
+                    {% endblock %}
                 </div>
             </a>
 

@@ -5,8 +5,8 @@ Make new post
 {% endblock %}
 
 {% block styles %}
-    {{ super() }}
-    <link rel="stylesheet" href="/submit/post.css">
+{{ super() }}
+<link rel="stylesheet" href="/submit/post.css">
 {% endblock %}
 
 {% block headScripts %}
@@ -64,4 +64,10 @@ Make new post
 <script src="imageUpload.js"></script>
 <script src="privacySelector.js"></script>
 <script src="submit.js"></script>
+{% endblock %}
+
+{% block post %}
+<img class="side-menu navigation newPost image bw-icon" alt="post icon" width="35px" height="35px"
+    src="/public/post selected.png">
+<p class="side-menu navigation newPost text"><strong>Post</strong></p>
 {% endblock %}
