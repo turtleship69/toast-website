@@ -38,12 +38,12 @@
                 .then(response => {
                     if (response.ok) {
                         console.log("Logout successful");
+                        hanko.user.logout();
                     }
                 })
                 .catch(error => {
                     console.error(error);
                 })
-            hanko.user.logout();
         });
 
     hanko.onUserLoggedOut(() => {
