@@ -34,7 +34,6 @@
     document.getElementById("logout-link")
         .addEventListener("click", (event) => {
             //delete session cookie, make a request to /hanko/logout and run hanko.user.logout()
-            document.cookie = "session=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
             fetch('/hanko/logout')
                 .then(response => {
                     if (response.ok) {

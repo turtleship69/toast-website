@@ -1,17 +1,48 @@
+#search {
+    position: sticky;
+    z-index: 5;
+}
+
 #search-bar {
     display: flex;
     position: relative;
     margin: auto;
     width: 50rem;
     height: 3rem;
-    border: 1px solid lightgray;
     text-align: center;
+    font-size:larger;
 }
 
 #search-bar p {
-    font-size:larger;
     margin: auto;
     vertical-align: middle;
     /* margin-top: 0.7em; */
     color: gray;
+}
+
+
+#search-results {
+    background: rgba(155,155,155,1);
+    margin: auto;
+    width: 50rem;
+}
+
+div.search-result {
+    display: flex;
+    height: 3rem;
+    margin-top: 0.5rem;
+    /* border: 1px solid #6A6C6E; */
+    width: 50rem;
+}
+
+p.search-result {
+    height: 1.2rem;
+    margin: 0.2rem;
+    color: black;
+}
+
+.search-result-pfp {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
 }

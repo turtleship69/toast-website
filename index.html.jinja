@@ -11,11 +11,19 @@
 <link rel="preload" href="/get_posts/home" as="fetch" type="application/json" crossorigin="anonymous">
 {% endblock %}
 
-{% block home %} src="/public/home selected.png" {% endblock %}
+{% block home %}
+<img class="side-menu navigation home image bw-icon" alt="home icon" width="35px" height="35px"
+    src="/public/home selected.png">
+<p class="side-menu navigation home text"><strong>Home</strong></p>
+{% endblock %}
 
 {% block content %}
-<div class="search-bar" id="search-bar">
+{# <div class="search-bar" id="search-bar">
     <p>Search</p>
+</div> #}
+<div class="search" id="search">
+<input id="search-bar" placeholder="Search">
+<div id="search-results" class="hidden"></div>
 </div>
 
 <div class="posts" id="posts">
@@ -30,4 +38,5 @@
 {% block bodyScripts%}
 {{ super() }}
 <script src="home.js"></script>
+<script src="search.js"></script>
 {% endblock %}

@@ -44,4 +44,10 @@
         background-color: #333333;
         border-color: white;
     }
+
+    p.search-result {
+        height: 1.2rem;
+        margin: 0.2rem;
+        color: white;
+    }
 }
