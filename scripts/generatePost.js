@@ -105,10 +105,47 @@ function createPostHTML(post) {
 
 
     if (post.Image1) {
+        var scroll_view = document.createElement("div");
+        scroll_view.className = "posts post scroll-view";
+
+        var scroll_content = document.createElement("div");
+        scroll_content.className = "posts post scroll-content";
+        scroll_view.appendChild(scroll_content);
+
         var postImage = document.createElement("img");
         postImage.className = "posts post media image";
         postImage.src = post.Image1;
-        mediaContainer.appendChild(postImage);
+        scroll_content.appendChild(postImage);
+
+        if (post.Image2) {
+            var postImage = document.createElement("img");
+            postImage.className = "posts post media image";
+            postImage.src = post.Image2;
+            scroll_content.appendChild(postImage);
+
+            if (post.Image3) {
+                var postImage = document.createElement("img");
+                postImage.className = "posts post media image";
+                postImage.src = post.Image3;
+                scroll_content.appendChild(postImage);
+
+                if (post.Image4) {
+                    var postImage = document.createElement("img");
+                    postImage.className = "posts post media image";
+                    postImage.src = post.Image4;
+                    scroll_content.appendChild(postImage);
+
+                    if (post.Image5) {
+                        var postImage = document.createElement("img");
+                        postImage.className = "posts post media image";
+                        postImage.src = post.Image5;
+                        scroll_content.appendChild(postImage);
+                    }
+                }
+
+            }
+            mediaContainer.appendChild(scroll_view);
+        }
 
         if (post.Body) {
             var caption = document.createElement("p");

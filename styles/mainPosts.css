@@ -233,3 +233,49 @@ img.posts.post.menu {
     width: 24px;
     height: 24px;
 }
+
+.scroll-view {
+    width: 47rem;
+    /* Set width of scroll view */
+    height: 47rem;
+    /* Set height of scroll view */
+    overflow: hidden;
+    /* Hide overflow content */
+    position: relative;
+    /* Positioning context for child elements */
+    border: 1px solid black;
+}
+
+.scroll-content {
+    white-space: nowrap;
+    /* Prevent line breaks */
+    overflow-x: scroll;
+    /* Enable horizontal scrolling */
+    overflow-y: hidden;
+    /* Hide vertical overflow */
+    width: 100%;
+    /* Full width content */
+    height: 100%;
+    /* Full height content */
+    scroll-snap-type: x mandatory;
+    /* Enable snapping */
+    scrollbar-width: none;
+}
+
+.scroll-content::-webkit-scrollbar {
+    height: 0;
+    /* Hide scrollbar for WebKit browsers */
+}
+
+
+
+.scroll-content img {
+    width: 47rem;
+    /* Set image width */
+    height: 47rem;
+    /* Set image height */
+    /* margin-right: 10px; */
+    /* Add some space between images */
+    scroll-snap-align: center;
+    /* Snap images to the center */
+}
