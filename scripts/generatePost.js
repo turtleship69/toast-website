@@ -144,8 +144,8 @@ function createPostHTML(post) {
                 }
 
             }
-            mediaContainer.appendChild(scroll_view);
         }
+        mediaContainer.appendChild(scroll_view);
 
         if (post.Body) {
             var caption = document.createElement("p");
