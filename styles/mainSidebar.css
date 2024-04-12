@@ -11,6 +11,7 @@ html, body {
     display: block;
     position: absolute;
     height: 3.5rem;
+    width: auto;
     transition: transform 0.3s ease-out;
     transform: scale(1);
     transition-delay: 0.3s;

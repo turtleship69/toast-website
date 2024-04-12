@@ -7,7 +7,7 @@
     display: flex;
     position: relative;
     margin: auto;
-    width: 50rem;
+    width: 45rem;
     height: 3rem;
     text-align: center;
     font-size:larger;
@@ -24,7 +24,7 @@
 #search-results {
     background: rgba(155,155,155,1);
     margin: auto;
-    width: 50rem;
+    width: 45rem;
 }
 
 div.search-result {
@@ -32,7 +32,7 @@ div.search-result {
     height: 3rem;
     margin-top: 0.5rem;
     /* border: 1px solid #6A6C6E; */
-    width: 50rem;
+    width: 45rem;
 }
 
 p.search-result {

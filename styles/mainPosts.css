@@ -9,8 +9,8 @@
     display: flex;
     flex-direction: column;
     /* border: 1px solid orange; */
-    max-width: 50rem;
-    width: fit-content;
+    width: 45rem;
+    /* width: fit-content; */
     word-wrap: break-word;
 } /*set width of entire posts list */
 
@@ -23,7 +23,7 @@ div {
 div.posts.post.container {
     /* margin-top: 1.5rem; */
     margin: 0.5rem;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
 }
 
 div.post.posts {
@@ -74,7 +74,7 @@ div.posts.post.user.container {
     margin-left: 1rem;
     margin-right: 1rem;
     margin-top: 1rem;
-    width: 48rem;
+    max-width: 43rem;
 } /*move profile down and right*/
 
 /* p.posts.post.user.details{
@@ -193,7 +193,7 @@ p.posts.post.actions.text {
 p.posts.post.content.text {
     font-family: 'Coming Soon', serif;
     font-size: 20px;
-    max-width: 47rem;
+    max-width: 42rem;
     max-height: 20em;
     overflow-wrap: break-word;
     overflow: hidden;
@@ -201,8 +201,8 @@ p.posts.post.content.text {
 }
 
 img.posts.post.media.image {
-    height: 47rem;
-    width: 47rem;
+    max-height: 42rem;
+    max-width: 42rem;
     /* margin-bottom: 0.25rem; */
     margin-bottom: 0rem;
 }
@@ -221,7 +221,7 @@ p.posts.post.media.caption {
     background-color: rgba(55, 55, 55, 0.7);
     height: 3rem;
     line-height: 3rem;
-    width: 46rem;
+    width: 42rem;
 
 }
 
@@ -235,9 +235,9 @@ img.posts.post.menu {
 }
 
 .scroll-view {
-    width: 47rem;
+    max-width: 42rem;
     /* Set width of scroll view */
-    height: 47rem;
+    max-height: 42rem;
     /* Set height of scroll view */
     overflow: hidden;
     /* Hide overflow content */
