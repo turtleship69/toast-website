@@ -38,6 +38,7 @@ div.post.posts.single {
     display: inline-block;
     /* padding-bottom: 2.5rem; */
     margin-bottom: 1rem;
+    width: 45rem;
 }
 
 
@@ -55,12 +56,19 @@ div.posts.post.user.details{
     /* height: 65px; */
     grid-auto-rows: 1.9rem;
     vertical-align: middle;
+    color: inherit;
 } /*move username and context to right of pfp and put them on the same line*/
 
 p.posts.post.user.details{
     /* vertical-align: middle; */
     align-self: center;
     font-size: 20px;
+    display: contents;
+    color: inherit;
+}
+
+.posts.post.link {
+    color: inherit;
 }
 
 /* div.posts.post.user.container {
@@ -279,3 +287,12 @@ img.posts.post.menu {
     scroll-snap-align: center;
     /* Snap images to the center */
 }
+
+a.post.posts.post.viewPost.link {
+    cursor: default;
+}
+/* 
+a.posts.post.user.pfp.link {
+    width: 100%;
+    height: 100%;
+} */

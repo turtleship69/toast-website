@@ -1,4 +1,4 @@
-function createPostHTML(post) {
+function createPostHTML(post, single = false) {
     // Create main container div
     var postDiv = document.createElement("div");
     postDiv.className = "posts post single";
@@ -30,8 +30,15 @@ function createPostHTML(post) {
     } else {
         userPfp.src = "/placeholder/pfp.jpg"; // You may want to update this with the actual user's profile picture
     }
+    userPfp.alt = "Profile Picture";
     userBorder.appendChild(userPfp);
-    userContainer.appendChild(userBorder);
+
+    pfp_link = document.createElement("a");
+    pfp_link.href = "/user?u=" + post.Username;
+    pfp_link.className = "posts post user pfp link";
+    
+    pfp_link.appendChild(userBorder);
+    userContainer.appendChild(pfp_link);
 
     var userDetails = document.createElement("div");
     userDetails.className = "posts post user details";
@@ -39,7 +46,14 @@ function createPostHTML(post) {
     var username = document.createElement("p");
     username.className = "posts post user details username";
     username.innerText = post.Username;
-    userDetails.appendChild(username);
+    // userDetails.appendChild(username);
+
+    var username_link = document.createElement("a");
+    username_link.href = "/user?u=" + post.Username;
+    username_link.className = "posts post user details username link";
+    username_link.appendChild(username);
+
+    userDetails.appendChild(username_link);
 
     var context = document.createElement("p");
     context.className = "posts post user details context";
@@ -200,7 +214,15 @@ function createPostHTML(post) {
 
     postDiv.appendChild(actionsContainer);
 
-    return postDiv;
+    if (single) {
+        return postDiv;
+    } else {
+        postLink = document.createElement("a");
+        postLink.className = "posts post viewPost link";
+        postLink.href = "/post?p=" + post.PostID;
+        postLink.appendChild(postDiv);
+        return postLink;
+    }
 }
 
 function deletePost(postID) {
