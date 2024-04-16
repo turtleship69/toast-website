@@ -13,6 +13,8 @@ document.getElementById('form').addEventListener('submit', (event) => {
 })
 
 function submit() {
+    //disable the submit button
+    document.getElementById("submit").disabled = true;
     // Assuming that 'post' is an object containing the necessary data
     // e.g., { title: 'YourTitle', postBody: 'YourPostBody', privacy: 1, images: [File1, File2, ...] }
 
