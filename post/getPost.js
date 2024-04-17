@@ -13,7 +13,8 @@ if (postId) {
                     error = true
                     if (data.errorCode === "loginRequired") {
                         // Redirect to the login page
-                        login_redirect_url = `/login/?redirect_url=/post/?p=${new URLSearchParams(window.location.search).get('p')}`
+                        login_redirect_url =
+                            `/login/?redirect_url=/post/?p=${postId}`
                         window.location.href = login_redirect_url;
                     } else {
                         throw new Error(`Unauthorized: ${data.message}`);
@@ -34,10 +35,9 @@ if (postId) {
         .then(data => {
             if (!error) {
                 console.log(data);
-                var postHTML = createPostHTML(data);
+                var postHTML = createPostHTML(data, true);
                 var postContainer = document.getElementById("posts");
-                postContainer.appendChild(postHTML); 
-                // Append the generated post HTML to the body or any other desired element
+                postContainer.appendChild(postHTML);
             }
         })
 } else {
