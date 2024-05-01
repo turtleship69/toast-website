@@ -215,6 +215,8 @@ function createPostHTML(post, single = false) {
     postDiv.appendChild(actionsContainer);
 
     if (single) {
+        // Update meta tags for Discord embedding
+        updateMetaTags(post);
         return postDiv;
     } else {
         postLink = document.createElement("a");
@@ -222,6 +224,40 @@ function createPostHTML(post, single = false) {
         postLink.href = "/post?p=" + post.PostID;
         postLink.appendChild(postDiv);
         return postLink;
+    }
+}
+
+function updateMetaTags(post) {
+    // Define meta tag properties and their corresponding content from the post object
+    var metaTagProperties = {
+        'og:title': post.Title,
+        'twitter:title': post.Title,
+        // Add more properties if needed
+    };
+
+    if (post.Body) {
+        metaTagProperties['og:description'] = post.Body;
+        metaTagProperties['twitter:description'] = post.Body;
+    }
+
+    if (post.Image1) {
+        metaTagProperties['og:image'] = post.Image1;
+        metaTagProperties['twitter:image'] = post.Image1;
+    }
+
+    // Update or create meta tags dynamically
+    for (var property in metaTagProperties) {
+        if (metaTagProperties.hasOwnProperty(property)) {
+            var metaTag = document.querySelector(`meta[property="${property}"], meta[name="${property}"]`);
+            if (!metaTag) {
+                metaTag = document.createElement('meta');
+                metaTag.setAttribute('property', property);
+                metaTag.setAttribute('content', metaTagProperties[property]);
+                document.head.appendChild(metaTag);
+            } else {
+                metaTag.setAttribute('content', metaTagProperties[property]);
+            }
+        }
     }
 }
 
