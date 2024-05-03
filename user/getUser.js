@@ -1,4 +1,7 @@
 const current_user = new URLSearchParams(window.location.search).get('u')
+const follow_button = document.getElementById('follow-button')
+const friend_request_button = document.getElementById('friend-request')
+
 var followers
 var following
 
@@ -48,6 +51,7 @@ if (!current_user) {
                 } else if (data.friendship == 2) {
                     removeFollowButton
                     FriendRequestSentButton()
+                    follow_button.innerHTML = "Friends"
                     console.log("friends")
                 }
             } else {
@@ -58,8 +62,6 @@ if (!current_user) {
 }
 
 
-const follow_button = document.getElementById('follow-button')
-const friend_request_button = document.getElementById('friend-request')
 
 function followEvent(){follow(current_user)}
 function friendRequestEvent(){friendRequest(current_user)}
