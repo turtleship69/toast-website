@@ -9,7 +9,7 @@
 
 <div class="side-menu" id="side-menu">
     <div id="menu">
-        <a href="/" aria-label="Read more about Seminole tax hike">
+        <a href="/" aria-label="Homepage">
             <div class="side-menu title" id="website-name">
                 <img class="side-menu title" id="website-name-image" src="/public/Website Name.png" alt="Toast">
                 <img class="side-menu title hidden" id="website-logo" src="/public/Website Logo.png" alt="Toast">
@@ -35,15 +35,16 @@
                 </div>
             </a> #}
 
-            <a class="side-menu navigation button link notifs" onclick="showNotifs()" style="cursor: pointer;">
-                <div class="side-menu navigation container button notifs">
+            {# <a class="side-menu navigation button link notifs" onclick="showNotifs()" style="cursor: pointer;"> #}
+                <div class="side-menu navigation container button notifs" 
+                onclick="showNotifs()" style="cursor: pointer;">
                     {% block notifs %}
                     <img class="side-menu navigation notifs image bw-icon" alt="notifs icon" width="35px" height="35px"
                         src="/public/notif unselected.png">
                     <p class="side-menu navigation notifs text">Notifs</p>
                     {% endblock %}
                 </div>
-            </a>
+            {# </a> #}
 
             {# <a class="side-menu navigation button link archive" href="/archive">
                 <div class="side-menu navigation container button archive">
