@@ -85,8 +85,6 @@ function createPostHTML(post, single = false) {
         var menuImage = document.createElement("img");
         menuImage.className = "posts post menu image bw-icon";
         menuImage.src = "/public/menu.png";
-        // menuImage.width = "24";
-        // menuImage.height = "24";
         menu.appendChild(menuImage);
 
 
@@ -129,30 +127,35 @@ function createPostHTML(post, single = false) {
         var postImage = document.createElement("img");
         postImage.className = "posts post media image";
         postImage.src = post.Image1;
+        postImage.alt = "image by " + post.Username;
         scroll_content.appendChild(postImage);
 
         if (post.Image2) {
             var postImage = document.createElement("img");
             postImage.className = "posts post media image";
             postImage.src = post.Image2;
+            postImage.alt = "image by " + post.Username;
             scroll_content.appendChild(postImage);
 
             if (post.Image3) {
                 var postImage = document.createElement("img");
                 postImage.className = "posts post media image";
                 postImage.src = post.Image3;
+                postImage.alt = "image by " + post.Username;
                 scroll_content.appendChild(postImage);
 
                 if (post.Image4) {
                     var postImage = document.createElement("img");
                     postImage.className = "posts post media image";
                     postImage.src = post.Image4;
+                    postImage.alt = "image by " + post.Username;
                     scroll_content.appendChild(postImage);
 
                     if (post.Image5) {
                         var postImage = document.createElement("img");
                         postImage.className = "posts post media image";
                         postImage.src = post.Image5;
+                        postImage.alt = "image by " + post.Username;
                         scroll_content.appendChild(postImage);
                     }
                 }
@@ -188,6 +191,7 @@ function createPostHTML(post, single = false) {
     var likeImage = document.createElement("img");
     likeImage.className = "posts post actions like image bw-icon";
     likeImage.src = "/public/like unselected.png";
+    likeImage.alt = "like";
     likeContainer.appendChild(likeImage);
 
     var likeText = document.createElement("p");
@@ -203,6 +207,7 @@ function createPostHTML(post, single = false) {
     var commentImage = document.createElement("img");
     commentImage.className = "posts post actions comment image bw-icon";
     commentImage.src = "/public/comment unselected.png";
+    commentImage.alt = "comment";
     commentContainer.appendChild(commentImage);
 
     var commentText = document.createElement("p");
