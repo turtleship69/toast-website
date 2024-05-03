@@ -223,6 +223,8 @@ function createPostHTML(post, single = false) {
     if (single) {
         // Update meta tags for Discord embedding
         updateMetaTags(post);
+        // Add breadcrumb to page
+        addBreadcrumb(post);
         return postDiv;
     } else {
         postLink = document.createElement("a");
@@ -266,6 +268,47 @@ function updateMetaTags(post) {
         }
     }
 }
+
+function addBreadcrumb(post) {
+    // seo purposes
+    // Get the current domain
+    const domain = window.location.origin;
+
+    // Define the breadcrumb path
+    const breadcrumbList = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": domain
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Post",
+                "item": domain + "/posts"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": post.Title,
+                "item": domain + "/post?p=" + post.PostID
+            }
+        ]
+    };
+
+    // Create a script element for JSON-LD structured data
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(breadcrumbList);
+
+    // Append the script to the head of the document
+    document.head.appendChild(script);
+}
+
 
 function deletePost(postID) {
     // Send get request to /new_post/delete/{post_id}
