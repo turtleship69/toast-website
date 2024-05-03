@@ -14,6 +14,9 @@ if (!current_user) {
         .then(data => {
             //if the user exists, display their info
             if (data.status == "success") {
+                addBreadcrumbUser(data)
+
+
                 document.getElementById('loading').style.display = 'none'
                 document.getElementById('main').style.display = 'block'
 
@@ -111,3 +114,33 @@ function alreadyFriended(){
 }
 
 setTimeout(function(){isUserProfile = true}, 100);
+
+
+function addBreadcrumbUser(data) {
+    const breadcrumbList = document.createElement('script');
+    breadcrumbList.setAttribute('type', 'application/ld+json');
+  
+    // Build the BreadcrumbList object
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": window.location.origin,
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": data.username,
+          "item": window.location.href, // Update with the current URL
+        },
+      ],
+    };
+  
+    breadcrumbList.textContent = JSON.stringify(breadcrumbSchema);
+    document.querySelector('head').appendChild(breadcrumbList);
+  }
+  
