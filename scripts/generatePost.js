@@ -85,6 +85,7 @@ function createPostHTML(post, single = false) {
         var menuImage = document.createElement("img");
         menuImage.className = "posts post menu image bw-icon";
         menuImage.src = "/public/menu.png";
+        menuImage.alt = "post options";
         menu.appendChild(menuImage);
 
 
