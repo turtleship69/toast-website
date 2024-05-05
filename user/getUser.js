@@ -15,6 +15,7 @@ if (!current_user) {
             //if the user exists, display their info
             if (data.status == "success") {
                 addBreadcrumbUser(data)
+                addMetaTags(data)
 
 
                 document.getElementById('loading').style.display = 'none'
@@ -122,25 +123,37 @@ function addBreadcrumbUser(data) {
   
     // Build the BreadcrumbList object
     const breadcrumbSchema = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": window.location.origin,
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": data.username,
-          "item": window.location.href, // Update with the current URL
-        },
-      ],
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": window.location.origin,
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": data.username,
+                "item": window.location.origin + '/user',
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": data.username,
+                "item": window.location.href, 
+            }
+        ],
     };
   
     breadcrumbList.textContent = JSON.stringify(breadcrumbSchema);
     document.querySelector('head').appendChild(breadcrumbList);
-  }
-  
+}
+
+function addMetaTags(data) {
+    const meta = document.createElement('meta');
+    meta.setAttribute('name', 'description');
+    meta.setAttribute('content', data.bio);
+    document.querySelector('head').appendChild(meta);
+}
