@@ -4,11 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico">
+
     <title>{% block title %}Welcome to toast{% endblock %}</title> 
     {% block meta %}{% endblock %}
     
-    {% block styles %}
     <link rel="stylesheet" href="/styles/globalDefaults.css">
+    {% block styles %}
     {% endblock %}
 
     {% block headScripts %}{% endblock %}
@@ -21,8 +23,8 @@
 </head>
 
 <body>
-    {% block body %}
-    {% endblock %}
+    {% block body %}{% endblock %}
+
     {% block bodyScripts %}{% endblock %}
 </body>
 </html>
