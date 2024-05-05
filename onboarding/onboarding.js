@@ -1,3 +1,13 @@
+const username = document.getElementById('username');
+const bio = document.getElementById('bio');
+const usernamePicker = document.getElementById('username-picker-outer');
+const bioPicker = document.getElementById('bio-picker-outer');
+const form = document.getElementById('form');
+const good = document.getElementById("good")
+const bad = document.getElementById("bad")
+const cont_button = document.getElementById("continue")
+cont_button.disabled = true;
+
 const safe = [
     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
     'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
@@ -7,7 +17,6 @@ const safe = [
     '_', '-', '.'
 ];
 
-
 function filterString(str, list) {
     return str.split('').filter(char => list.includes(char)).join('');
 }
@@ -16,14 +25,10 @@ function switchInputPrompt(event) {
     event.preventDefault();
 
     //check username isn't empty
-    const username = document.getElementById('username').value;
     if (username.length === 0) {
         alert("Username cannot be empty");
         return;
     }
-
-    const usernamePicker = document.getElementById('username-picker-outer');
-    const bioPicker = document.getElementById('bio-picker-outer');
 
     // Slide out the username picker
     usernamePicker.classList.add('fade-out');
@@ -35,26 +40,19 @@ function switchInputPrompt(event) {
 
         // Slide in the bio picker
         bioPicker.classList.add('fade-in');
-    }, 500); // Adjust the timeout based on the transition duration in CSS
+    }, 500);
 
     //change event listener to submit()
-    document.getElementById("form").removeEventListener("submit", switchInputPrompt);
-    document.getElementById("form").addEventListener("submit", submit)
+    form.removeEventListener("submit", switchInputPrompt);
+    form.addEventListener("submit", submit)
 }
 
 function submit(event) {
     event.preventDefault();
 
-    alert("yay")
-
     const formData = new URLSearchParams();
-    formData.append('username', document.getElementById('username').value);
-    formData.append('bio', document.getElementById('bio').value);
-
-    redirect_url = new URLSearchParams(window.location.search).get('redirect_url')
-    if (redirect_url) {
-        formData.append('redirect_url', redirect_url);
-    }
+    formData.append('username', username.value);
+    formData.append('bio', bio.value);
 
     fetch('/hanko/onboarding', {
         method: 'POST',
@@ -81,43 +79,31 @@ function submit(event) {
     return false;
 }
 
-const taken = ["e", "f", "g"]
+const taken = ["eee", "fff", "ggg"]
 
 
-window.addEventListener("DOMContentLoaded", (event) => {
-    good = document.getElementById("good")
-    bad = document.getElementById("bad")
-    cont_button = document.getElementById("continue")
-    cont_button.disabled = true;
-
-    //when the contents of #username is edited, check if it's already taken
-    input_box = document.getElementById("username")
-
-    input_box.addEventListener("input", function () {
-        input_box.value = filterString(input_box.value, safe)
-        if (input_box.value == "") {
-            good.style.display = "none"
-            bad.style.display = "none"
-            cont_button.disabled = true;
-        }
-        else if (taken.includes(input_box.value)) {
-            good.style.display = "none"
-            bad.style.display = "block"
-            cont_button.disabled = true;
-        } else {
-            good.style.display = "block"
-            bad.style.display = "none"
-            cont_button.disabled = false;
-        }
-    });
-
-    document.getElementById("form").addEventListener("submit", switchInputPrompt)
-    
-    document.getElementById("bio").addEventListener('input', autoResize, false);
+username.addEventListener("input", function () {
+    username.value = filterString(username.value, safe)
+    if (username.value == "") {
+        good.style.display = "none"
+        bad.style.display = "none"
+        cont_button.disabled = true;
+    }
+    else if (taken.includes(username.value)) {
+        good.style.display = "none"
+        bad.style.display = "block"
+        cont_button.disabled = true;
+    } else {
+        good.style.display = "block"
+        bad.style.display = "none"
+        cont_button.disabled = false;
+    }
 });
 
+form.addEventListener("submit", switchInputPrompt)
 
 function autoResize() {
     this.style.height = 'auto';
     this.style.height = this.scrollHeight + 'px';
 }
+bio.addEventListener('input', autoResize, false);

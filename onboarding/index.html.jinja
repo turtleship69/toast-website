@@ -1,0 +1,39 @@
+{% extends "base.html.jinja" %}
+
+{% block title %}Onboarding{% endblock %}
+
+{% block styles %}
+<link href="onboarding.css" rel="stylesheet" type="text/css" />{% endblock %}
+
+{% block bodyScripts %}
+<script src="onboarding.js"></script>{% endblock %}
+
+{% block body %}
+<div id="welcome-message" class="welcome-message">
+    <p class="welcome-message contents text fancy">Welcome to</p>
+    <img id="website-name-image" class="welcome-message contents image" src="/public/Website Name.png" width="300em">
+</div>
+<form id="form">
+    <div id="username-picker-outer" class="picker-outer">
+        <p class="username-picker fancy question">How would you like to be known?</p>
+        <div id="username-input-div" class="input-div">
+            <img id="username-man" src="/public/profile unselected.png">
+            <input type="text" id="username" class="input-box" name="username" placeholder="Username" autofocus
+                required>
+        </div>
+        <p id="good" class="username-picker message available">That username is valid</p>
+        <p id="bad" class="username-picker message taken">That username is invalid</p>
+    </div>
+
+    <div id="bio-picker-outer" class="picker-outer">
+        <p class="bio-picker fancy question">Would you like to add a bio?</p>
+        <div id="bio-input-div" class="input-div">
+            <textarea id="bio" class="input-box" name="bio" placeholder="Bio (Optional)"></textarea>
+        </div>
+    </div>
+
+    <div id="continue-container">
+        <input id="continue" type="submit" value="Continue" />
+    </div>
+</form>
+{% endblock %}

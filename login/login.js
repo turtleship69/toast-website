@@ -1,10 +1,10 @@
 import { register } from "https://esm.run/@teamhanko/hanko-elements";
 import { en } from "https://esm.run/@teamhanko/hanko-elements/i18n/en";
 
-en.texts.setupPasskey = "Passkeys are a secure and convenient way to sign in" +
-    ", using your device's fingerprint or PIN instead of a password. " +
-    "Passkeys are stored securely on your device itself, makes signing in "+ 
-    "faster and safer than ever."
+// en.texts.setupPasskey = "Sign in securely with your device - no passwords to" +
+//     " remember. Passkeys are stored on your device for faster, safer access."
+
+en.texts.setupPasskey = "Your credentials will be stored securely on your device for faster login next time."
 
 var login_url = "/hanko/login"
 const redirect_url = new URLSearchParams(window.location.search).get('redirect_url')

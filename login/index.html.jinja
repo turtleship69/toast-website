@@ -1,0 +1,15 @@
+{% extends "base.html.jinja" %}
+
+{% block title %}Log in to toast{% endblock %}
+
+{% block headScripts %}
+  <script src="/config/hanko.js" ></script>
+{% endblock %}
+
+{% block body %}
+  <div id="main" style="margin: auto; width:fit-content; padding:10px;">
+    <hanko-auth />
+  </div>
+
+  <script src="login.js" type="module"></script>
+{% endblock %}
