@@ -1,4 +1,0 @@
-const servers_config = {
-    "frontend": "STATIC FONT END URL",
-    "backend": "BACKEND HOST"
-}
