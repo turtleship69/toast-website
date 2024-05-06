@@ -36,6 +36,12 @@ def generate_netlify_toml():
     from = "/notifications/*" 
     to = "{os.environ["BACKEND_URL"]}/notifications/:splat" 
     status = 200 
+    force = true
+
+    [[redirects]] 
+    from = "/sitemap.xml*" 
+    to = "{os.environ["BACKEND_URL"]}/sitemap.xml" 
+    status = 200 
     force = true"""
 
     with open("netlify.toml", 'w') as f:
