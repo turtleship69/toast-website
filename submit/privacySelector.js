@@ -1,7 +1,7 @@
 /*=============== default to onlyFriends ===============*/
-setTimeout(() => {
+window.onload = function () {
     document.getElementById('onlyFriends').click();
-},50)
+}
 
 /*=============== buttons ===============*/
 let lastClickedButton = null;
