@@ -15,11 +15,11 @@ if (!current_user) {
             //if the user exists, display their info
             if (data.status == "success") {
                 addBreadcrumbUser(data)
-                
-                
+
+
                 document.getElementById('loading').style.display = 'none'
                 document.getElementById('main').style.display = 'block'
-                
+
                 document.getElementById('username').innerHTML = current_user
                 document.title = '@' + current_user + ' | Toast'
                 followers = data.followers
@@ -51,22 +51,27 @@ if (!current_user) {
                     postContainer.appendChild(postHTML)
                 })
 
-                if (data.friendship == 0) {
-                    addFollowButton()
-                    addFriendRequestButton()
-                    console.log("not friends")
-                } else if (data.friendship == 1) {
-                    removeFollowButton()
-                    addFriendRequestButton
-                    console.log("following")
-                } else if (data.friendship == 2) {
-                    removeFollowButton
-                    FriendRequestSentButton()
-                    follow_button.innerHTML = "Friends"
-                    follow_button.style.backgroundColor = '#9A58C6'
-                    console.log("friends")
+                if (data.is_current_user) {
+                    addPfpChangeLink()
+                    document.getElementById("friends").style.display = 'none'
                 } else {
-                    console.log(data.friendship)
+                    if (data.friendship == 0) {
+                        addFollowButton()
+                        addFriendRequestButton()
+                        console.log("not friends")
+                    } else if (data.friendship == 1) {
+                        removeFollowButton()
+                        addFriendRequestButton
+                        console.log("following")
+                    } else if (data.friendship == 2) {
+                        removeFollowButton
+                        FriendRequestSentButton()
+                        follow_button.innerHTML = "Friends"
+                        follow_button.style.backgroundColor = '#9A58C6'
+                        console.log("friends")
+                    } else {
+                        console.log(data.friendship)
+                    }
                 }
             } else {
                 //if the user doesn't exist, display an error message
@@ -130,7 +135,7 @@ setTimeout(function () { isUserProfile = true }, 100);
 function addBreadcrumbUser(data) {
     const breadcrumbList = document.createElement('script');
     breadcrumbList.setAttribute('type', 'application/ld+json');
-  
+
     // Build the BreadcrumbList object
     const breadcrumbSchema = {
         "@context": "https://schema.org",
@@ -152,11 +157,11 @@ function addBreadcrumbUser(data) {
                 "@type": "ListItem",
                 "position": 3,
                 "name": data.username,
-                "item": window.location.href, 
+                "item": window.location.href,
             }
         ],
     };
-  
+
     breadcrumbList.textContent = JSON.stringify(breadcrumbSchema);
     document.querySelector('head').appendChild(breadcrumbList);
 }
@@ -166,4 +171,51 @@ function addMetaTags(data) {
     meta.setAttribute('name', 'description');
     meta.setAttribute('content', data.bio);
     document.querySelector('head').appendChild(meta);
+}
+
+function addPfpChangeLink() {
+    //add an event listener to the profile picture that runs uploadPfp():
+    pfp = document.getElementById('profile-picture')
+    pfp.addEventListener('click', uploadProfilePic);
+    pfp.style.cursor = 'pointer'
+    pfp.alt = 'Click to change profile picture'
+}
+
+async function uploadProfilePic() {
+    const options = {
+        multiple: false,
+        types: [
+            {
+                description: 'Images',
+                accept: {
+                    'image/*': ['.png', '.jpeg', '.jpg', '.bmp', '.gif'],
+                },
+            },
+        ],
+    };
+
+    try {
+        const [fileHandle] = await window.showOpenFilePicker(options);
+        const file = await fileHandle.getFile();
+
+        const formData = new FormData();
+        formData.append('pfp', file);
+
+        const response = await fetch('/hanko/profile_picture', {
+            method: 'POST',
+            body: formData,
+        });
+
+        if (response.ok) {
+            console.log('Profile picture uploaded successfully!');
+            // Handle successful upload (e.g., update UI)
+            //reload
+            location.reload()
+        } else {
+            console.error('Error uploading profile picture:', response.statusText);
+            // Handle upload error (e.g., display error message)
+        }
+    } catch (error) {
+        console.error('Error picking or uploading image:', error);
+    }
 }
