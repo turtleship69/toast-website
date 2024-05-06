@@ -33,6 +33,12 @@ def generate_netlify_toml():
     force = true
 
     [[redirects]] 
+    from = "/pfp/*" 
+    to = "{os.environ["BACKEND_URL"]}/pfp/:splat" 
+    status = 200 
+    force = true
+
+    [[redirects]] 
     from = "/notifications/*" 
     to = "{os.environ["BACKEND_URL"]}/notifications/:splat" 
     status = 200 
