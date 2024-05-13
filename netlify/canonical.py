@@ -20,8 +20,8 @@ def addCanonTag(file:str, link: str) -> None:
 def addTags():
     BASE_URL = os.environ['URL']
     pages = [
-        ['/index.html', BASE_URL],
-        ['/login/index.html', f"{BASE_URL}/login"]
+        ['index.html', BASE_URL],
+        ['login/index.html', f"{BASE_URL}/login"]
     ]
 
     #iterate through pages and add canonical tag
