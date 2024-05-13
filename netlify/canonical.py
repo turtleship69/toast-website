@@ -6,9 +6,6 @@ import os
 
 from bs4 import BeautifulSoup
 
-from lxml import etree
-
-
 def add_canon_tag(file:str, link: str) -> None:
     """
     modify the html structure of pages and add a canonical meta tag using bs4 to the end of the head
