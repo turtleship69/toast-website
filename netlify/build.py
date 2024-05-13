@@ -7,4 +7,4 @@ compile.compile()
 if os.environ.get('NETLIFY'):
     hanko.save_config()
     rewrites.generate_netlify_toml()
-canonical.addTags("http://localhost")
+    canonical.addTags()
