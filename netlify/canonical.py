@@ -1,29 +1,49 @@
 """
 this module modifies the html structure of pages and added a canonical meta tag
 """
-import os
-import bs4
 
-def addCanonTag(file:str, link: str) -> None:
+import os
+
+from bs4 import BeautifulSoup
+
+from lxml import etree
+
+
+def add_canon_tag(file:str, link: str) -> None:
     """
-    modify the html structure of pages and add a canonical meta tag using bs4
+    modify the html structure of pages and add a canonical meta tag using bs4 to the end of the head
     :param file: the file to modify
+    :param link: the canonical link to add
     :return: None
     """
-    with open(file, 'r') as f:
-        soup = bs4.BeautifulSoup(f, 'html.parser')
-        soup.find('head').append(soup.new_tag('link', rel='canonical', href=link))
-        with open(file, 'w') as f:
-            f.write(str(soup))
+    # Read the HTML file
+    with open(file, 'r', encoding='utf-8') as f:
+        html_content = f.read()
+
+    # Parse the HTML content
+    soup = BeautifulSoup(html_content, 'html.parser')
+
+    # Create a new meta tag for canonical link
+    canonical_tag = soup.new_tag('link', rel='canonical', href=link)
+
+    # Find the head section and append the canonical tag
+    head_tag = soup.find('head')
+    head_tag.append(canonical_tag)
+
+    # Write the modified HTML back to the file
+    with open(file, 'w', encoding='utf-8') as f:
+        f.write(str(soup))
+    print(f"added canonical tag to {file}")
 
 
-def addTags():
-    BASE_URL = os.environ['URL']
+
+def addTags(BASE_URL=None):
+    if not BASE_URL:
+        BASE_URL = os.environ["URL"]
     pages = [
-        ['index.html', BASE_URL],
-        ['login/index.html', f"{BASE_URL}/login"]
-    ]
+        ["index.html", BASE_URL], 
+        ["login/index.html", f"{BASE_URL}/login"]]
 
-    #iterate through pages and add canonical tag
+    # iterate through pages and add canonical tag
     for page in pages:
-        addCanonTag(page[0], page[1])
+        add_canon_tag(page[0], page[1])

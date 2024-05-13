@@ -4,8 +4,7 @@ import compile, hanko, rewrites, canonical
 
 compile.compile()
 
-hanko.save_config()
-
 if os.environ.get('NETLIFY'):
+    hanko.save_config()
     rewrites.generate_netlify_toml()
-    canonical.addTags()
+canonical.addTags("http://localhost")
