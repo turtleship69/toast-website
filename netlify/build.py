@@ -1,8 +1,11 @@
 #!/usr/bin/env python
-import compile, hanko, rewrites
+import os
+import compile, hanko, rewrites, canonical
 
 compile.compile()
 
 hanko.save_config()
 
-rewrites.generate_netlify_toml()
+if os.environ.get('NETLIFY'):
+    rewrites.generate_netlify_toml()
+    canonical.addTags()
