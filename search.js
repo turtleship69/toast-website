@@ -19,9 +19,9 @@ search_bar.addEventListener("input", function (event) {
             search_results.classList.add("hidden");
             return;
         }
+        let result = await search(input)
         search_results.classList.remove("hidden");
         search_results.innerHTML = "";
-        let result = await search(input)
         console.log(result);
         if (result.users.length === 0) {
             const p = document.createElement("p");
@@ -33,13 +33,8 @@ search_bar.addEventListener("input", function (event) {
             const div = document.createElement("div");
             div.classList.add("search-result");
 
-            // div.addEventListener("click", function () {
-            //     window.location.href = `/user?u=${item.username}`;
-            // });
+            item.pfp = item.pfp ? item.pfp : "/placeholder/pfp.png";
 
-            if (!item.pfp) {
-                item.pfp = "/placeholder/pfp.png";
-            }
             const pfp = document.createElement("img");
             pfp.src = item.pfp;
             pfp.classList.add("search-result-pfp");
@@ -47,14 +42,12 @@ search_bar.addEventListener("input", function (event) {
             const details = document.createElement("div");
 
             const username = document.createElement("p");
-            username.classList.add("search-result");
-            username.classList.add("username");
+            username.classList.add("search-result", "username");
             username.innerHTML = item.username;
             username.style.fontWeight = "bold";
 
             const bio = document.createElement("p");
-            bio.classList.add("search-result");
-            bio.classList.add("bio");
+            bio.classList.add("search-result", "bio");
             bio.innerHTML = item.bio;
 
             details.appendChild(username);
