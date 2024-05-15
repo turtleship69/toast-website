@@ -10,7 +10,7 @@ def generate_netlify_toml():
 
     [[redirects]]
     from = "/images/*"
-    to = "/.netlify/images?url=/raw-images:splat&w=1080&h=1080&q=50&fit=cover"
+    to = "/.netlify/images?url=/raw-images/:splat&w=1080&h=1080&q=50&fit=cover"
     status = 200
 
     [[redirects]] 
