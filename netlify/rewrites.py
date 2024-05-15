@@ -3,6 +3,17 @@ import os
 def generate_netlify_toml():
     #define url rewrite rules
     netlify = f"""[[redirects]] 
+    from = "/raw-images/*" 
+    to = "{os.environ["BACKEND_URL"]}/images/:splat" 
+    status = 200 
+    force = true
+
+    [[redirects]]
+    from = "/images/*"
+    to = "/.netlify/images?url=/raw-images:splat&w=1080&h=1080&q=50&fit=cover"
+    status = 200
+
+    [[redirects]] 
     from = "/hanko/*" 
     to = "{os.environ["BACKEND_URL"]}/hanko/:splat" 
     status = 200 
@@ -23,12 +34,6 @@ def generate_netlify_toml():
     [[redirects]] 
     from = "/friendships/*" 
     to = "{os.environ["BACKEND_URL"]}/friendships/:splat" 
-    status = 200 
-    force = true
-
-    [[redirects]] 
-    from = "/images/*" 
-    to = "{os.environ["BACKEND_URL"]}/images/:splat" 
     status = 200 
     force = true
 
