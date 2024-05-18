@@ -380,6 +380,12 @@ function likePost(postID, image) {
                     });
             } else {
                 toast("You must be logged in to like a post.");
+                image.src = "/public/like_unselected.png"
+                //remove like button event listener from all posts
+                var buttons = document.getElementsByClassName("posts post actions like image");
+                for (var i = 0; i < buttons.length; i++) {
+                    buttons[i].onclick = null;
+                }
             }
         });
 }
