@@ -36,7 +36,7 @@ function createPostHTML(post, single = false) {
     pfp_link = document.createElement("a");
     pfp_link.href = "/user?u=" + post.Username;
     pfp_link.className = "posts post user pfp link";
-    
+
     pfp_link.appendChild(userBorder);
     userContainer.appendChild(pfp_link);
 
@@ -194,13 +194,31 @@ function createPostHTML(post, single = false) {
 
     var likeImage = document.createElement("img");
     likeImage.className = "posts post actions like image bw-icon";
-    likeImage.src = "/public/like unselected.png";
     likeImage.alt = "like";
-    likeContainer.appendChild(likeImage);
+    if (post.liked) {
+        likeImage.src = "/public/like_selected.png";
+        likeImage.classList.toggle("bw-icon")
+        addUnlikeButton(post.PostID, likeImage);
+    } else {
+        likeImage.src = "/public/like unselected.png";
+        addLikeButton(post.PostID, likeImage);
+    }
+
+    var likeLink = document.createElement("a")
+    likeLink.className = "posts post actions like link";
+    likeLink.href = ""
+    //make linking the anchor do nothing
+    likeLink.addEventListener("click", function (e) {
+        e.preventDefault();
+    });
+
+    likeLink.appendChild(likeImage);
+
+    likeContainer.appendChild(likeLink);
 
     var likeText = document.createElement("p");
     likeText.className = "posts post actions like text";
-    likeText.innerText = "1.2k"; // You may want to update this with actual like count
+    likeText.innerText = post.likes; // You may want to update this with actual like count
     likeContainer.appendChild(likeText);
 
     actionsContainer.appendChild(likeContainer);
@@ -312,7 +330,6 @@ function addBreadcrumb(post) {
     document.head.appendChild(script);
 }
 
-
 function deletePost(postID) {
     // Send get request to /new_post/delete/{post_id}
     // check data.status and either remove post div or display error message
@@ -324,7 +341,96 @@ function deletePost(postID) {
                 var postDiv = document.getElementById("Post-" + postID);
                 postDiv.remove();
             } else {
-                alert("Error deleting post:", data.message);
+                toast("Error deleting post:", data.message);
             }
         });
+}
+
+function likePost(postID, image) {
+    image.src = "/public/like_selected.gif";
+    image.alt = "liked";
+    console.log("like")
+    //send request to /hanko/check to see if user is logged in
+    //if user is logged in, send get request to /interactions/like/{postid} to like post
+    //if user is not logged in, display error message
+    fetch("/hanko/check")
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                // User is logged in, like post
+                fetch("/interactions/like/" + postID)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === "success") {
+                            // Update like count
+                            image.classList.toggle("bw-icon");
+                            addUnlikeButton(postID, image);
+
+                            //get the parent's sibling p element, convert the innerText to a number and update the like count
+                            var likeCount = image.parentElement.nextSibling;
+                            var likeCountInt = parseInt(likeCount.innerText);
+                            likeCountInt++;
+                            likeCount.innerText = likeCountInt;
+
+                        } else {
+                            console.error("Error liking post:", data.message);
+                            image.src = "/public/like_unselected.png"
+                            image.classList.toggle("bw-icon");
+                        }
+                    });
+            } else {
+                toast("You must be logged in to like a post.");
+            }
+        });
+}
+
+function dislikePost(postID, image) {
+    image.src = "/public/like_unselected.png"
+    image.classList.toggle("bw-icon");
+    console.log("dislike")
+    //send request to /hanko/check to see if user is logged in
+    //if user is logged in, send get request to /interactions/dislike/{postid} to dislike post
+    //if user is not logged in, display error message
+    fetch("/hanko/check")
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                // User is logged in, dislike post
+                fetch("/interactions/unlike/" + postID)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === "success") {
+                            // Update like count
+                            image.alt = "like"
+                            addLikeButton(postID, image);
+
+                            //get the parent's sibling p element, convert the innerText to a number and update the like count
+                            var likeCount = image.parentElement.nextSibling;
+                            var likeCountInt = parseInt(likeCount.innerText);
+                            likeCountInt--;
+                            likeCount.innerText = likeCountInt;
+                        } else {
+                            console.error("Error unliking post:", data.message);
+                            image.src = "/public/like_selected.png"
+                            image.classList.toggle("bw-icon");
+                        }
+                    });
+            } else {
+                toast("You must be logged in to like a post.");
+            }
+        });
+}
+
+function addLikeButton(id, image) {
+    //remove any event listeners on the image
+    //add event listener to image to call likePost function
+
+    image.onclick = function () { likePost(id, image) }
+}
+
+function addUnlikeButton(id, image) {
+    //remove any event listeners on the image
+    //add event listener to image to call dislikePost function
+
+    image.onclick = function () { dislikePost(id, image) }
 }
