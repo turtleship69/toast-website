@@ -50,6 +50,12 @@ def generate_netlify_toml():
     force = true
 
     [[redirects]] 
+    from = "/interactions/*" 
+    to = "{os.environ["BACKEND_URL"]}/interactions/:splat" 
+    status = 200 
+    force = true
+
+    [[redirects]] 
     from = "/sitemap.xml*" 
     to = "{os.environ["BACKEND_URL"]}/sitemap.xml" 
     status = 200 
