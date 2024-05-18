@@ -28,11 +28,11 @@
     }
 
     #website-name-image {
-        content: url("/public/Website Name White.png");
+        content: url("/public/Website_Name_White.png");
     }
 
     #website-logo {
-        content: url("/public/Website Logo White.png");
+        content: url("/public/Website_Logo_White.png");
     }
 
     /*onboarding continue*/
