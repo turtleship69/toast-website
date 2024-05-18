@@ -108,7 +108,9 @@ function createPostHTML(post, single = false) {
     titleText.className = "posts post title text";
     titleText.innerText = post.Title;
     titleContainer.appendChild(titleText);
-    document.title = post.Title;
+    if (single) {
+        document.title = post.Title;
+    }
 
     postDiv.appendChild(titleContainer);
 
