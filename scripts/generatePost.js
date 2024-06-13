@@ -49,7 +49,7 @@ function createPostHTML(post, single = false) {
     // userDetails.appendChild(username);
 
     var username_link = document.createElement("a");
-    username_link.href = "/user?u=" + post.Username;
+    username_link.href = "/user/?u=" + post.Username;
     username_link.className = "posts post user details username link";
     username_link.appendChild(username);
 
@@ -250,7 +250,7 @@ function createPostHTML(post, single = false) {
     } else {
         postLink = document.createElement("a");
         postLink.className = "posts post viewPost link";
-        postLink.href = "/post?p=" + post.PostID;
+        postLink.href = "/post/?p=" + post.PostID;
         postLink.appendChild(postDiv);
         return postLink;
     }
