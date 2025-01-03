@@ -1,9 +1,6 @@
 import { register } from "https://esm.run/@teamhanko/hanko-elements";
 import { en } from "https://esm.run/@teamhanko/hanko-elements/i18n/en";
 
-// en.texts.setupPasskey = "Sign in securely with your device - no passwords to" +
-//     " remember. Passkeys are stored on your device for faster, safer access."
-
 en.texts.setupPasskey = "Your credentials will be stored securely on your device for faster login next time."
 
 var login_url = "/hanko/login"
@@ -17,7 +14,7 @@ async function fetchData() {
     try {
         const { hanko } = await register(hanko_config.url, { translations: { en } });
 
-        hanko.onAuthFlowCompleted(async () => {
+        hanko.onSessionCreated(async () => {
             // successfully logged in, make a request to "/api/login"
             const response = await fetch(login_url);
             const data = await response.json();
